@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    padding-top: 30px;
+}
+
+.wrapper {
+    width: 480px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 2px rgba(31, 31, 31, 0.3);
+}
+
+.text-profile {
+    color: #424242;
+    padding: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+.text-profile h1 {
+    font-weight: 400;
+} 
+
+.text-profile img {
+    width: 100%;
+    padding-top: 25px;
+}
+
+.text-profile h4, p {
+    padding-top: 20px;
+}
+
+
