@@ -50,6 +50,8 @@ body {
         /* content-principles */
 .content-principles {
     color: #263555;
+    border-bottom: 2px solid #d8d8d8;
+    padding-bottom: 50px;
     margin-bottom: 50px;
 }
 .content-principles h1 {
@@ -65,14 +67,15 @@ body {
     color: #4e5050;
 }
 
-        /* decor-line */
+        /* decor-line - неправильний варіант залишений 
+        для наглядності
 .decor-line {
     margin-bottom: 50px;    
 }
 .decor-line img {
     display: block;
     width: 100%;
-}
+} */
 
         /* content-offer */
 .content-offer {
