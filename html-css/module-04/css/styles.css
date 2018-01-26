@@ -1,0 +1,25 @@
+body {
+    min-height: 100vh;
+    font-family: font-family: 'Pathway Gothic One' , sans-serif;
+}
+.wrapper 
+   
+/* .wrapper {
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+} */
+
+/* .logo {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-color: #2196f3;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    line-height: 150px; /* вьісота строки* и вертикальное центрирование*/ 
+    /* border-radius: 50%; делает лого кругльім или скругляет углы */
+} 
