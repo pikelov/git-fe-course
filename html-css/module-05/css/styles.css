@@ -1,5 +1,6 @@
 body {
-    min-height: 100vh; 
+    min-height: 100vh;
+  min-width: 800px;
 }
 
 /* HEADER */
@@ -8,6 +9,16 @@ body {
   background-color: #fffcf4; 
   line-height: 90px;
   /* max-width: 1600px; */
+}
+footer {
+  background-color: #323232;
+  line-height: 90px;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--nav-font-stack);
+}
+footer > span {
+  color:#1abc9c;
 }
 
 .header:after {
@@ -76,16 +87,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fffcf4;
-  min-width: 100%;
-  
+  max-width: 50%;
 }
 
 .tours-header {
   font-family: var(--nav-font-stack);    
   font-size: 52px; 
   font-weight: 900;
-  margin-bottom: 40px; 
-  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* .tours::after { */
@@ -95,14 +104,47 @@ display: block;
 font-size: 24px;
 font-family: var(--main-font-stack);
 font-weight: 100;
-margin-left: 360px;
-/* text-align: center; */
+}
+
+
+.next, .prev {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: calc(50% - 30px);
+}
+.next {
+  right: calc(20% - 60px);
+}
+.prev {
+  left: calc(20% - 60px);
+}
+.next::before {
+  content: ">";
+}
+.prev::before {
+  content: "<";
+}
+.next::before, .prev::before {
+  opacity: 0.4;
+  background-color: #1abc9c;
+  height: 60px;
+  width: 60px;
+  display: block;
+  /*content: "<";*/
+  color: #fff;
+  font-size: 60px;
+  text-align: center;
+}
+.next:hover::before, .prev:hover::before {
+  opacity: 1;
 }
 
 /* GALLERY */
 
 .collection {
-  background-color: #e9f0fd
+  background-color: #e9f0fd;
+  height: auto;
 }
 .collection-header {
   font-family: var(--main-font-stack);
@@ -125,14 +167,15 @@ margin-left: 360px;
 }
 
 .gallery {
- min-width: 100%;
-  margin: 245px, 0, 245px, 0;
+  min-width: 100%;
+  text-align: center;
+  padding-bottom: 100px;
 }
 .gallery-item {
   display: inline-block;
-  height: 325px;
+  height: 400px;
   width: 255px;
-  object-fit: cover;
+  /* object-fit: cover; */
   margin-right: 30px;
   position: relative;
   
@@ -140,38 +183,32 @@ margin-left: 360px;
 
 .gallery-item-content {
   display: none;
-  /* background-color: #d3d3d3; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 235px; 
   text-align: center;
-}
-
-.item-description {
-  display: inline-block;
-  background-color: #323232;
-  font-size: 18px;
-  font-family: 'Roboto Black', sans-serif;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.item-price {
-  text-transform: uppercase;
-
+  vertical-align: middle;
 }
 
 .gallery-item:hover > .gallery-item-content {
   display: block;
-  filter: opacity(70%);
-} 
+}
 
-.gallery-item:hover img:hover {
-  display: block;
-  filter: blur(5px), grayscale(30%) ; 
-} 
+.gallery-item:hover::before {
+  background-color: #323232;
+  filter: opacity(70%);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 235px;
+  height: 305px;
+  content: "";
+}
+
+
+
 
     /* CARD ICONS */
 .icons {
@@ -206,32 +243,63 @@ margin-left: 360px;
 }
 
 .ico {
-
+  
 }
 
 .cart-add {
-  background-color: #b94c20;
+  background-color: #74351d;
   display: inline-block;
   width: 160px;
   text-align: justify;
   height: 50px;
 }
 
-  .card-text {
+.card-text {
     display: inline-block;
     font-family: var(--nav-font-stack);
     font-size: 14px;
     color: rgb(255, 255, 255);
     text-transform: uppercase;
-    
-    text-align: center;
-     
+    text-align: center; 
     height: 50px;
     vertical-align: middle;
-  }
 }
+.gallery-item > span{
+  line-height: 55px;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: 'Roboto Black', sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.item-description {
+  background-color: #323232;
+  width: 200px;
+  padding-left: 15px;
+
+}
+
+.item-price {
+  background-color: #8c8c8c;
+  text-align: center;
+  width: 55px;
+  margin-left: -4px;
+
+}
+
+.gallery-item:hover > .item-description {
+  background-color: #b94c20;
+}
+.gallery-item:hover > .item-price {
+  background-color: #74351d;
+}
+.text {}
+
 /* .collection:after {
   content: "";
   display: block;
   clear: both;
 } */
+
+
