@@ -44,12 +44,9 @@ do {
 while (userInput !== null);
 console.log("User array: ", numbers)
 
-function newFunction(userInput) {
-    while (counter <= 10 && userInput !== null) {
-        console.log(counter);
-        counter += 1;
-    }
-}
+
+    
+
 for (let i = 0, arrNum = numbers.length; i < arrNum; i += 1) {
     total += numbers[i];
 }
