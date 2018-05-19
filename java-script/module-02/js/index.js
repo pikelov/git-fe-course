@@ -26,11 +26,11 @@ let userInput;
 let inputNumber;
 const numbers = [];
 let total = 0;
-console.log(numbers);
-do { 
-    userInput = prompt("Please enter value" , "");
+
+do {
+    userInput = prompt("Please enter value", "");
     console.log(userInput);
-    if (userInput === "" || userInput === null ) {
+    if (userInput === "" || userInput === null) {
         break;
     }
 
@@ -38,20 +38,19 @@ do {
 
     if (!Number.isNaN(inputNumber)) {
         numbers.push(inputNumber);
-      } else {  
+    } else {
         alert("Input error - please try again ! This time with the numbers!");
-       
-        }
     }
-     while (inputNumber )
+}
+while (inputNumber);
 
-console.log("User array: ", numbers)
+console.log("User array: ", numbers);
 
 
 if (numbers.length > 0) {
-for (let i = 0, arrNum = numbers.length; i < arrNum; i += 1) {
-    total += numbers[i];
-  }
-alert(`Total sum is ${total}`);
-} else (alert('Ohhh! It\'s empty :( '))
+    for (let i = 0, arrNum = numbers.length; i < arrNum; i += 1) {
+        total += numbers[i];
+    }
+    alert(`Total sum is ${total}`);
+} else (alert('Ohhh! It\'s empty :( '));
 
