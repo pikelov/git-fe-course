@@ -35,7 +35,7 @@ let isAgree;
 let tourName;
 let max = hugardaTour;
 let userChoice = Number(prompt('Введите количество мест.', ""));
-
+let stat = [];
 
 if (isNaN(userChoice) || userChoice < 1 || userChoice === "") {
   alert('Некорректный ввод - попробуйте еще раз!');
@@ -48,12 +48,15 @@ else {
     alert("К сожалению мест недостаточно.");
 
   } else {
-    tourName = prompt("Куда хотите отправиться сегодня? Taba , Sharm , Hugarda ?");
+    tourName = prompt("Куда хотите отправиться сегодня? Taba , Sharm , Hugarda ?" , "" ) ;
+    console.log(tourName);
+    stat.push(tourName);
 
     switch (tourName) {
       case "Taba", "taba" : if (userChoice <= tabaTour ) {
         isAgree = confirm('Есть место в группе Taba, согласны быть в этой группе?')
         console.log(isAgree);
+
         if (isAgree) {
           tabaTour = tabaTour - userChoice;
           console.log('Осталось мест в группе Taba: ', tabaTour);
@@ -95,6 +98,7 @@ else {
       default: alert("Мест нет. Приходите завтра!")
     }
   }
+  console.log(stat)
 }
 
 //===========
