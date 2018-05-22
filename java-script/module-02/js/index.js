@@ -47,7 +47,7 @@ while (inputNumber);
 console.log("User array: ", numbers);
 
 
-if (numbers.length > 0) {
+if (numbers.length > 0 ) {
     for (let i = 0, arrNum = numbers.length; i < arrNum; i += 1) {
         total += numbers[i];
     }
