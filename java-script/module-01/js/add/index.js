@@ -30,7 +30,7 @@
 let tabaTour = 6;
 let sharmTour = 15;
 let hugardaTour = 25;// как сравнить эти три переменные и выбрать с 
-                     //cамым бОльшим значением для переменной  max???
+//cамым бОльшим значением для переменной  max???
 let isAgree;
 let tourName;
 let max = hugardaTour;
@@ -48,12 +48,12 @@ else {
     alert("К сожалению мест недостаточно.");
 
   } else {
-    tourName = prompt("Куда хотите отправиться сегодня? Taba , Sharm , Hugarda ?" , "" ) ;
+    tourName = prompt("Куда хотите отправиться сегодня? Taba , Sharm , Hugarda ?", "");
     console.log(tourName);
     stat.push(tourName);
 
     switch (tourName) {
-      case "Taba", "taba" : if (userChoice <= tabaTour ) {
+      case "Taba", "taba": if (userChoice <= tabaTour) {
         isAgree = confirm('Есть место в группе Taba, согласны быть в этой группе?')
         console.log(isAgree);
 
@@ -69,7 +69,7 @@ else {
       } alert("Мест недостаточно - попробуйте другие направления"); break;
 
 
-      case "Sharm" , "sharm" : if (userChoice <= sharmTour) {
+      case "Sharm", "sharm": if (userChoice <= sharmTour) {
         isAgree = confirm('Есть место в группе Sharm, согласны быть в этой группе?');
         if (isAgree) {
           sharmTour = sharmTour - userChoice;
@@ -82,7 +82,7 @@ else {
         }
       } alert("Мест недостаточно - попробуйте другие направления"); break;
 
-      case "Hugarda" , "hugarda" : if (userChoice <= hugardaTour) {
+      case "Hugarda", "hugarda": if (userChoice <= hugardaTour) {
         isAgree = confirm('Есть место в группе Hugarda, согласны быть в этцой группе?');
         if (isAgree) {
           sharmTour = hugardaTour - userChoice;
