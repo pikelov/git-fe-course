@@ -22,36 +22,33 @@
 const adminLogin = "admin";
 const adminPassword = "m4ngo1zh4ackz0r";
 const msgCancel = "Отменено пользователем!";
-const msgDinaded = "Доступ запрещен!";
+const msgDenied = "Доступ запрещен!";
 const msgWelcome = "Добро пожаловать!";
 
 const enterLogin = prompt(" Enter login please: ");
+
 if (enterLogin === null) {
   alert(msgCancel);
-  brake;
-} else if (enterLogin !== adminLogin) {
-  alert(msgDinaded);
-  brake;
-} else if (enterLogin === adminLogin) {
-  alert(msgWelcome);
-}
-
-const enterPassword = prompt(" Enter password: ");
-
-if (enterPassword === null) {
-  alert(msgCancel);
-  brake;
-} else if (enterPassword !== adminPassword) {
-  alert(msgDinaded);
-  brake;
-} else if (enterPassword === adminPassword) {
-  alert(msgWelcome);
-}
-
-const userContinue = confirm('Готові до додаткового завдання?');
-
-if (userContinue) {
   
+} else if (enterLogin !== adminLogin) {
+  alert(msgDenied);
+  
+} else if (enterLogin === adminLogin) {
+  const enterPassword = prompt(" Enter password: ");
+  
+  if (enterPassword === null) {
+    alert(msgCancel);
+  } else if (enterPassword !== adminPassword) {
+    alert(msgDenied);
+  } else if (enterPassword === adminPassword) {
+    alert(msgWelcome);
+  }
+}
+
+
+
+
+
   // Создайте скрипт турагенства, продающего поездки в 3 - х группах: sharm, hurgada и taba.
 
   //     Кол - во мест в группах ограничено: sharm - 15, hurgada - 25, taba - 6.
@@ -191,4 +188,3 @@ if (userContinue) {
   //       }
   //     }
   //   }
-}
