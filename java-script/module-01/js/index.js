@@ -29,13 +29,10 @@ const enterLogin = prompt(" Enter login please: ");
 
 if (enterLogin === null) {
   alert(msgCancel);
-  
 } else if (enterLogin !== adminLogin) {
-  alert(msgDenied);
-  
+  alert(msgDenied);  
 } else if (enterLogin === adminLogin) {
   const enterPassword = prompt(" Enter password: ");
-
   if (enterPassword === null) {
     alert(msgCancel);
   } else if (enterPassword !== adminPassword) {
