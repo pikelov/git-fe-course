@@ -33,7 +33,7 @@ if (enterLogin === null) {
   alert(msgDenied);  
 } else if (enterLogin === adminLogin) {
   const enterPassword = prompt(" Enter password: ");
-  if (enterPassword === null) {
+    if (enterPassword === null) {
     alert(msgCancel);
   } else if (enterPassword !== adminPassword) {
     alert(msgDenied);
