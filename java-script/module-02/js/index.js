@@ -5,17 +5,17 @@ const numbers = [];
 let total = 0;
 
 do {
-    userInput = prompt("Please enter value", "");
-    if (userInput === null) {
+    userInput = prompt('Please enter value', '');
+    if (userInput === null ) {
         break;       
     } 
     inputNumber = Number(userInput);
     if (!Number.isNaN(inputNumber)) {
         numbers.push(inputNumber);
     } else {
-        alert("Input error - please try again ! This time with the numbers!");   
+        alert('Input error - please try again ! This time with the numbers!');   
     }
-} while (userInput >= 0 || Number.isNaN(inputNumber));
+} while (userInput !== null || Number.isNaN(inputNumber));
 
 if (numbers.length > 0) {
     for (let i = 0; i < numbers.length; i += 1) {
