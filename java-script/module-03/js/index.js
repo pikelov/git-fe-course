@@ -9,7 +9,7 @@ const isLoginValid = login => {
   return isInRange;
 };
 
-const isLoginUnique = function(logins, login) {
+const isLoginUnique = (logins, login) => {
   const isUnique = !logins.includes(login);
   return isUnique;
 };
