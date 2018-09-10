@@ -34,19 +34,23 @@ let userPassword;
 
 do {
   userPassword = prompt("Enter password.");
-  if (userPassword === null) {//одразу перевіряємо чи не натиснув cancel
+  if (userPassword === null) {
+    //одразу перевіряємо чи не натиснув cancel
     break;
-  } else {
-    passReqst = passwords.includes(userPassword);//перевіряємо масив та отримуємо буль true/false
   }
+  passReqst = passwords.includes(userPassword); //перевіряємо масив та отримуємо буль true/false
   if (passReqst) {
     alert("Wellcome!");
     break;
-  } else {
-    attempts = attempts - 1; //тут у мене є сумніви чи це так можна робити?
-    alert(`Wrong password! You have another ${attempts} attempts.`);
   }
-} while (userPassword !== null && attempts !== 0); 
-if (attempts === 0) {
-  alert("You reached the limit of attempts. Account blocked");
-}
+  attempts = attempts - 1; //тут у мене є сумніви чи це так можна робити?
+  if (!passReqst) {
+    if (attempts > 0) {
+      alert(`Wrong password! You have another ${attempts} attempts.`);
+    }
+    if (attempts < 1) {
+      alert("You reached the limit of attempts. Account blocked");
+      break;
+    }
+  }
+} while (userPassword !== null && attempts > 0);
