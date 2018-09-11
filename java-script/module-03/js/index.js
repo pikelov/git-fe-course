@@ -3,15 +3,13 @@
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
 const isLoginValid = login => {
-  let min = 4;
-  let max = 16;
-  const isInRange = login.length >= min && login.length <= max;
-  return isInRange;
+  const min = 4;
+  const max = 16;
+  return login.length >= min && login.length <= max;
 };
 
 const isLoginUnique = (logins, login) => {
-  const isUnique = !logins.includes(login);
-  return isUnique;
+  return !logins.includes(login);
 };
 
 const addLogin = (logins, login) => {
