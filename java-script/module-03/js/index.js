@@ -1,4 +1,4 @@
-`use strict`;
+'use strict';
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
@@ -13,12 +13,12 @@ const isLoginUnique = (logins, login) => {
 };
 
 const addLogin = (logins, login) => {
-  let isInRange = isLoginValid(login);
+  const isInRange = isLoginValid(login);
   if (!isInRange) {
     console.log("Ошибка! Логин должен быть от 4 до 16 символов");
     return;
   }
-  let includeLogin = isLoginUnique(logins, login);
+  const includeLogin = isLoginUnique(logins, login);
   if (!includeLogin) {
     console.log(`Логин ${login} уже используется!`);
     return;
