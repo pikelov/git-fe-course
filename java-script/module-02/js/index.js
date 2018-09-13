@@ -1,4 +1,4 @@
-`use strict`;
+'use strict';
 let inputNumber;
 const arr = [];
 let total = 0;
