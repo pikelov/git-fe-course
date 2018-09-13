@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const products = {
   bread: 10,
   milk: 15,
@@ -7,7 +7,7 @@ const products = {
   cheese: 40
 };
 
-function Cashier(name = "manager", productDatabase = {}) {
+function Cashier(name = 'Sales manager', productDatabase = {}) {
   this.name = name;
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
@@ -38,7 +38,7 @@ function Cashier(name = "manager", productDatabase = {}) {
   };
 
   this.onError = function() {
-    console.log("Очень жаль, вам не хватает денег на покупки");
+    console.log('Очень жаль, вам не хватает денег на покупки');
   };
 
   this.reset = function() {
@@ -46,7 +46,7 @@ function Cashier(name = "manager", productDatabase = {}) {
   };
 }
 
-const polly = new Cashier("Polly", products);
+const polly = new Cashier('Polly', products);
 const order = {
   bread: 2,
   milk: 2,
