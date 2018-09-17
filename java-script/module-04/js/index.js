@@ -26,11 +26,9 @@ function Cashier(name = 'Sales manager', productDatabase = {}) {
   };
 
   this.countChange = function(totalPrice) {
-    if (this.customerMoney < totalPrice) {
-      return null;
-    }
-    const result = this.customerMoney - totalPrice;
+    const result = (this.customerMoney > totalPrice) ? this.customerMoney - totalPrice : null;       
     return result;
+
   };
 
   this.onSuccess = function(change) {
@@ -44,7 +42,7 @@ function Cashier(name = 'Sales manager', productDatabase = {}) {
   this.reset = function() {
     this.customerMoney = 0;
   };
-}
+};
 
 const polly = new Cashier('Polly', products);
 const order = {
@@ -55,7 +53,7 @@ const order = {
 };
 const totalPrice = polly.countTotalPriceOrder(order);
 console.log(totalPrice);
-polly.getCostumerMoney(300);
+polly.getCostumerMoney(100);
 console.log(polly.customerMoney);
 const change = polly.countChange(totalPrice);
 console.log(change);
