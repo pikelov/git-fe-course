@@ -13,34 +13,31 @@ function Cashier(name = 'Sales manager', productDatabase = {}) {
   this.productDatabase = productDatabase;
   this.customerMoney = 0;
 
-  this.getCostumerMoney = function(amount) {
+  this.getCostumerMoney = amount => {
     this.customerMoney += amount;
   };
 
-  this.countTotalPriceOrder = function(order) {
+  this.countTotalPriceOrder = order => {
     let sum = 0;
-    const keys = Object.keys(order);
-    for (const elem of keys) {
+    for (const elem in order) {
       sum += order[elem] * this.productDatabase[elem];
     }
     return sum;
   };
 
-  this.countChange = function(totalPrice) {
-    const result = (this.customerMoney > totalPrice) ? this.customerMoney - totalPrice : null;       
-    return result;
+  this.countChange = totalPrice => 
+  this.customerMoney > totalPrice ? this.customerMoney - totalPrice : null;       
+  
 
-  };
-
-  this.onSuccess = function(change) {
+  this.onSuccess = change => {
     console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   };
 
-  this.onError = function() {
+  this.onError = () => {
     console.log('Очень жаль, вам не хватает денег на покупки');
   };
 
-  this.reset = function() {
+  this.reset = () => {
     this.customerMoney = 0;
   };
 };
@@ -52,16 +49,25 @@ const order = {
   apples: 1,
   cheese: 1
 };
+
 const totalPrice = polly.countTotalPriceOrder(order);
+
 console.log(totalPrice);
-polly.getCostumerMoney(100);
+
+polly.getCostumerMoney(150);
+
 console.log(polly.customerMoney);
+
 const change = polly.countChange(totalPrice);
+
 console.log(change);
+
 if (change !== null) {
   polly.onSuccess(change);
 } else {
   polly.onError();
-}
+};
+
 polly.reset();
+
 console.log(polly.customerMoney);
