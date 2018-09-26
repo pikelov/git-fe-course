@@ -14,7 +14,7 @@ function Cashier(name = 'Sales manager', productDatabase = {}) {
   this.customerMoney = 0;
 
   this.getCostumerMoney = amount => {
-    this.customerMoney += amount;
+    this.customerMoney = amount;
   };
 
   this.countTotalPriceOrder = order => {
@@ -25,10 +25,10 @@ function Cashier(name = 'Sales manager', productDatabase = {}) {
     return sum;
   };
 
-  this.countChange = totalPrice => 
-  this.customerMoney > totalPrice ? this.customerMoney - totalPrice : null;       
+  this.countChange = totalPrice => {
+    return this.customerMoney > totalPrice ? this.customerMoney - totalPrice : null; 
+  };       
   
-
   this.onSuccess = change => {
     console.log(`Спасибо за покупку, ваша сдача ${change}!`);
   };
@@ -54,7 +54,7 @@ const totalPrice = polly.countTotalPriceOrder(order);
 
 console.log(totalPrice);
 
-polly.getCostumerMoney(150);
+polly.getCostumerMoney(250);
 
 console.log(polly.customerMoney);
 
