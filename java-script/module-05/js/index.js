@@ -174,16 +174,29 @@ console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree
 // * Получить массив всех скиллов всех пользователей (поле skills), при этом не должно быть
 // * повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
 // */
-const getAllSkills = arr => arr.reduce((acc, user) => user && user.skills ? acc.concat(user.skills) : acc, []).sort();
+// const getAllSkills = arr => arr.reduce((acc, user) => user && user.skills ? acc.concat(user.skills) : acc, []).sort();
+const getAllSkills = arr => arr
+.reduce((acc, user, index, array) => {
+    if (index === array.length-1) {
+        return filterArray(acc);
+    }
+
+    return user && user.skills ? acc.concat(user.skills) : acc;
+}, []);
+
+function filterArray(array) {
+    return array.filter( ( item, index, inputArray ) => {
+        return inputArray.indexOf(item) === index;
+ }).sort();
+}
 
 console.log(getAllSkills(users));
 // // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
 
-                             
 // /**
 // * Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 // */
-// const getUserNamesSortedByFriendsCount = arr => {...};
+const getUserNamesSortedByFriendsCount = arr => {};
 
 // console.log(getUserNamesSortedByFriendsCount(users)); 
 // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
