@@ -72,15 +72,10 @@ class Hamburger {
    * Попробуйте сделать это геттером чтобы можно было обращаться как obj.price и нам вернет сумму.
    */
   get price() {
-    const hamburgerSizePrice = Hamburger.SIZES[this.size].price;
-    const hamburgerStuffingPrice = Hamburger.STUFFINGS[this.stuffing].price;
     const hamburgerToppingPrice = this.toppings.reduce((acc, value) => {
       return acc + Hamburger.TOPPINGS[value].price;
     }, 0);
-
-    const totalPrice =
-      hamburgerSizePrice + hamburgerStuffingPrice + hamburgerToppingPrice;
-    return totalPrice;
+     return Hamburger.SIZES[this.size].price + Hamburger.STUFFINGS[this.stuffing].price + hamburgerToppingPrice;
   }
 
   /**
