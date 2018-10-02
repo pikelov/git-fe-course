@@ -75,7 +75,11 @@ class Hamburger {
     const hamburgerToppingPrice = this.toppings.reduce((acc, value) => {
       return acc + Hamburger.TOPPINGS[value].price;
     }, 0);
-     return Hamburger.SIZES[this.size].price + Hamburger.STUFFINGS[this.stuffing].price + hamburgerToppingPrice;
+    return (
+      Hamburger.SIZES[this.size].price +
+      Hamburger.STUFFINGS[this.stuffing].price +
+      hamburgerToppingPrice
+    );
   }
 
   /**
