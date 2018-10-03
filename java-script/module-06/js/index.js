@@ -64,7 +64,17 @@ class Hamburger {
   get stuffing() {
     return this._stuffing;
   }
-
+  
+  _calculate(key){
+      const calculatedKey = this._toppings.reduce((acc, value) => {
+           return acc + Hamburger.TOPPINGS[value][key];
+         }, 0);
+         return (
+           Hamburger.SIZES[this._size][key] +
+           Hamburger.STUFFINGS[this._stuffing][key] +
+           calculatedKey
+         ); 
+  }
   /**
    * Узнать цену гамбургера
    * @returns {Number} - Цена в деньгах
@@ -72,14 +82,7 @@ class Hamburger {
    * Попробуйте сделать это геттером чтобы можно было обращаться как obj.price и нам вернет сумму.
    */
   get price() {
-    const hamburgerToppingPrice = this.toppings.reduce((acc, value) => {
-      return acc + Hamburger.TOPPINGS[value].price;
-    }, 0);
-    return (
-      Hamburger.SIZES[this.size].price +
-      Hamburger.STUFFINGS[this.stuffing].price +
-      hamburgerToppingPrice
-    );
+    return this._calculate('price');
   }
 
   /**
@@ -89,14 +92,7 @@ class Hamburger {
    * Попробуйте сделать это геттером чтобы можно было обращаться как obj.calories и нам вернет сумму.
    */
   get calories() {
-    const hamburgerToppingCalories = this.toppings.reduce(function(acc, value) {
-      return acc + Hamburger.TOPPINGS[value].calories;
-    }, 0);
-    return (
-      Hamburger.SIZES[this.size].calories +
-      Hamburger.STUFFINGS[this.stuffing].calories +
-      hamburgerToppingCalories
-    );
+    return this._calculate('calories')
   }
 }
 
