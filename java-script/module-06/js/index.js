@@ -65,6 +65,13 @@ class Hamburger {
     return this._stuffing;
   }
   
+  /**
+   *
+   *
+   * @param {Передаем нужное значение. price || calories} key
+   * @returns
+   * @memberof Hamburger
+   */
   _calculate(key){
       const calculatedKey = this._toppings.reduce((acc, value) => {
            return acc + Hamburger.TOPPINGS[value][key];
