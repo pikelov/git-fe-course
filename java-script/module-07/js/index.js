@@ -34,7 +34,9 @@ const posts = [
 
 const root = document.querySelector('#root');
 
-createCards(posts);
+const newPosts = createCards(posts);
+
+root.append(...newPosts);
 
 function createButton({ text = 'Read more', className = '', link = '#' }) {
   const btn = document.createElement('a');
@@ -43,7 +45,7 @@ function createButton({ text = 'Read more', className = '', link = '#' }) {
   btn.setAttribute('href', link);
 
   return btn;
-}
+};
 
 function createPostCard({
   img = '',
@@ -89,5 +91,5 @@ function createCards(postsArr) {
   //   });
   //   postsEls.push(post);
   // });
-  return root.append(...postsEls);
+  return postsEls;
 }
