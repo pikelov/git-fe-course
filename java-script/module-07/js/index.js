@@ -24,7 +24,7 @@ const posts = [
     link: 'link-2.com'
   },
   {
-    img: 'https://placeimg.com/400/150/arch',
+    img: 'https://placeimg.com/400/150/tech',
     title: 'Post title 3',
     text:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, nemo dignissimos ea temporibus voluptatem maiores maxime consequatur impedit nobis sunt similique voluptas accusamus consequuntur, qui modi nesciunt veritatis distinctio rem!',
@@ -45,7 +45,32 @@ function createButton({ text = 'Read more', className = '', link = '#' }) {
   btn.setAttribute('href', link);
 
   return btn;
-};
+}
+
+function createImgElem(imgElem) {
+  const postImg = document.createElement('img');
+  postImg.classList.add('post__image');
+  postImg.setAttribute('src', imgElem);
+  postImg.setAttribute('alt', 'post image');
+
+  return postImg;
+}
+
+function createTitleElem(titleText) {
+  const postTitle = document.createElement('h2');
+  postTitle.classList.add('post__title');
+  postTitle.textContent = titleText;
+
+  return postTitle;
+}
+
+function createTextElem(textContent) {
+  const postText = document.createElement('p');
+  postText.classList.add('post__text');
+  postText.textContent = textContent;
+
+  return postText;
+}
 
 function createPostCard({
   img = '',
@@ -54,25 +79,18 @@ function createPostCard({
   link = ''
 }) {
   const postWrapper = document.createElement('div');
-  const postImg = document.createElement('img');
-  const postTitle = document.createElement('h2');
-  const postText = document.createElement('p');
+  postWrapper.classList.add('post');
+
   const bttn = createButton({
     text: 'Read more...',
     className: 'button',
     link: link
   });
 
-  postWrapper.classList.add('post');
-  postImg.classList.add('post__image');
-  postTitle.classList.add('post__title');
-  postText.classList.add('post__text');
+  const postImg = createImgElem(img);
+  const postTitle = createTitleElem(title);
+  const postText = createTextElem(text);
 
-  postImg.setAttribute('src', img);
-  postImg.setAttribute('alt', 'post image');
-
-  postText.textContent = text;
-  postTitle.textContent = title;
   postWrapper.append(postImg, postTitle, postText, bttn);
 
   return postWrapper;
@@ -81,15 +99,5 @@ function createPostCard({
 function createCards(postsArr) {
   const postsEls = postsArr.map(postItem => createPostCard(postItem));
 
-  // const postsEls = [];
-  // postsArr.forEach(item => {
-  //   const post = createPostCard({
-  //     img: item.img,
-  //     title: item.title,
-  //     text: item.text,
-  //     link: item.link
-  //   });
-  //   postsEls.push(post);
-  // });
   return postsEls;
 }
