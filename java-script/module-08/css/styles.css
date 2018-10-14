@@ -1,0 +1,29 @@
+body {
+    padding: 30px;
+  }
+  
+li {
+    list-style: none;
+  }
+  
+  .preview {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  
+  .image-fullview {
+    width: 800px;
+  }
+  
+  .fullview{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .effect {
+    filter: opacity(0.5);
+  }
