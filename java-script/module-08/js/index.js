@@ -1,64 +1,98 @@
 'use strict';
 
 const galleryItems = [
-    { preview: 'img/preview-1.jpeg', fullview: 'img/fullview-1.jpeg', alt: "alt text 1" },
-    { preview: 'img/preview-2.jpeg', fullview: 'img/fullview-2.jpeg', alt: "alt text 2" },
-    { preview: 'img/preview-3.jpeg', fullview: 'img/fullview-3.jpeg', alt: "alt text 3" },
-    { preview: 'img/preview-4.jpeg', fullview: 'img/fullview-4.jpeg', alt: "alt text 4" },
-    { preview: 'img/preview-5.jpeg', fullview: 'img/fullview-5.jpeg', alt: "alt text 5" },
-    { preview: 'img/preview-6.jpeg', fullview: 'img/fullview-6.jpeg', alt: "alt text 6" },
-  ];
+    { preview: 'img/preview/preview-1.jpeg', fullview: 'img/fullview/fullview-1.jpeg', alt: "alt text 1" },
+    { preview: 'img/preview/preview-2.jpeg', fullview: 'img/fullview/fullview-2.jpeg', alt: "alt text 2" },
+    { preview: 'img/preview/preview-3.jpeg', fullview: 'img/fullview/fullview-3.jpeg', alt: "alt text 3" },
+    { preview: 'img/preview/preview-4.jpeg', fullview: 'img/fullview/fullview-4.jpeg', alt: "alt text 4" },
+    { preview: 'img/preview/preview-5.jpeg', fullview: 'img/fullview/fullview-5.jpeg', alt: "alt text 5" },
+    { preview: 'img/preview/preview-6.jpeg', fullview: 'img/fullview/fullview-6.jpeg', alt: "alt text 6" },
+];
   
-  const gallery = document.querySelector('.image-gallery');
-  const addClassForGallery = gallery.classList.add('js-image-gallery');
+const imageGallery = document.querySelector('.image-gallery');
+imageGallery.classList.add('js-image-gallery');
 
-function createPreview () {
-  const previewList = document.createElement('ul');
+const fullview = createFullviewElem(galleryItems);
+const previewList = createPreviewList(galleryItems);
 
-  previewList.classList.add('preview');
+imageGallery.append(fullview, previewList );
 
-  const imagePreview = createImagePreview(galleryItems);
+const imgList = document.querySelector('.preview');
+const imageFullview = document.querySelector('.image-fullview');
+const images = imgList.querySelectorAll('img');
 
-  previewList.append(...imagePreview);
-    
+imgList.addEventListener('click', onListClick);
+
+console.log()
+/* Create element 'ul' and spread image collection
+  from createImagePreview function*/
+function createPreviewList (arr) {
+  const list = document.createElement('ul');
+  list.classList.add('preview')
+
+  const itemsPreview = createImagePreview(arr);
+  list.append(...itemsPreview);
+
   return list;
 }
+/**
+ *Create collection of elements 'li' from incoming imageDB
+ *
+ * @param {array of objects} imageDB
+ * @returns collection of 'li' elements with placed images
+ */
+function createImagePreview(imageDB) {
+  let items = [];
+  imageDB.forEach(elem => {
+    const item = document.createElement('li');
+    const image = document.createElement('img');
+    image.classList.add('img-thumbnail');
+    image.setAttribute('src', elem.preview);
+    image.setAttribute('data-fullview', elem.fullview);
+    image.setAttribute('alt', elem.alt);
+    item.append(image);
+    items.push(item);
+  });
 
-function createFullview () {
+  return items;
+}
+
+function createFullviewElem(arr) {
   const fullview = document.createElement('div');
-
   fullview.classList.add('fullview');
 
-  const imageFullview = createImageFullview(galleryItems);
+  const imageFullview = createImageFullview(arr);
   fullview.append(imageFullview);
 
   return fullview;
 }
- 
-function createImagePreview () {
 
+function createImageFullview (arr) {
+  const fullview = document.createElement('img');
+  fullview.classList.add('image-fullview');
+  fullview.setAttribute('src', arr[0].fullview );
+  fullview.setAttribute('alt', arr[0].alt);
+
+  return fullview;
 }
 
-function createImageFullview () {
+function onListClick({ target }) {
+  const nodeName = target.nodeName;
 
+  if (nodeName !== 'IMG') return;
+  imageFullview.setAttribute('src', target.dataset.fullview);
+
+  images.forEach(image => {
+    if (image !== target) {
+      image.classList.remove('effect');
+    } else {
+      image.classList.add('effect');
+    }
+  });
 }
-
-  /*
+/*
   Создайте компонент галлереи изображений следующего вида.
   
-    <div class="image-gallery js-image-gallery">
-      <div class="fullview">
-        <!-- Если выбран первый элемент из preview -->
-        <img src="img/fullview-1.jpeg" alt="alt text 1">
-      </div>
-      <!-- li будет столько, сколько объектов в массиве картинок. Эти 3 для примера -->
-      <ul class="preview">
-        <li><img src="img/preview-1.jpeg" data-fullview="img/fullview-1.jpeg" alt="alt text 1"></li>
-        <li><img src="img/preview-2.jpeg" data-fullview="img/fullview-2.jpeg" alt="alt text 2"></li>
-        <li><img src="img/preview-3.jpeg" data-fullview="img/fullview-3.jpeg" alt="alt text 3"></li>
-      </ul>
-    </div>   
-    
     🔔 Превью компонента: https://monosnap.com/file/5rVeRM8RYD6Wq2Nangp7E4TkroXZx2
       
       
@@ -105,10 +139,62 @@ function createImageFullview () {
     Тогда создание экземпляра будет выглядеть следующим образом.
   */
   
-  new Gallery({
-    items: galleryItems,
-    parentNode: document.querySelector('.image-gallery'),
-    defaultActiveItem: 1
-  });
+//   new Gallery({
+//     items: galleryItems,
+//     parentNode: document.querySelector('.image-gallery'),
+//     defaultActiveItem: 1
+//   });
   
   /* Далее плагин работает в автономном режиме */
+
+//   const gallery = document.querySelector('.image-gallery');
+//   gallery.classList.add('js-image-gallery');
+
+//   const fullview = createFullview();
+//   const preview = createPreview();
+
+//   gallery.append(fullview, preview);
+
+
+//   const list = document.querySelector('.preview');
+//   const images = list.querySelectorAll('img');
+//   const imageFullview = document.querySelector('.image-fullview');
+  
+//   list.addEventListener('click', onListClick);
+  
+// function createPreview () {
+
+//   const previewList = document.createElement('ul');
+//   previewList.classList.add('preview');
+
+//   const imagePreview = createImagePreview(galleryItems);
+
+//   previewList.append(...imagePreview);
+    
+//   return list;
+// }
+
+// function createFullview (galleryItems) {
+//   const fullview = document.createElement('div');
+
+//   fullview.classList.add('fullview');
+
+//   const imageFullview = createImageFullview(galleryItems);
+//   fullview.append(imageFullview);
+
+//   return fullview;
+// }
+ 
+// function createImagePreview () {
+  
+// }
+
+// function createImageFullview ({ 
+//     preview = 'preview',
+//     fullview = 'fullview',
+//     alt = 'alt'
+//   }) {
+//     const fullView = createFullview(galleryItems);
+
+//     return fullView;
+// }
