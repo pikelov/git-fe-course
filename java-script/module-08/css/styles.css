@@ -11,7 +11,7 @@ li {
   margin-right: auto;
 }
 .preview {
-  margin-top: 3px;
+  margin: 3px 0 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -24,6 +24,8 @@ li {
 
 .preview :hover {
   filter: sepia(60%);
+  border-bottom: 3px solid #063b8a;
+  box-shadow: 2px 3px 5px  #063b8a;
 }
 
 .image-fullview {
@@ -47,4 +49,5 @@ li {
 
 .image-preview {
   width: 160px;
+  margin-bottom: -4px;
 }
