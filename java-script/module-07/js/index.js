@@ -47,10 +47,10 @@ function createButton({ text = 'Read more', className = '', link = '#' }) {
   return btn;
 }
 
-function createImgElem(imgElem) {
+function createImgElem(imgLink) {
   const postImg = document.createElement('img');
   postImg.classList.add('post__image');
-  postImg.setAttribute('src', imgElem);
+  postImg.setAttribute('src', imgLink);
   postImg.setAttribute('alt', 'post image');
 
   return postImg;
@@ -72,20 +72,11 @@ function createTextElem(textContent) {
   return postText;
 }
 
-function createPostCard({
-  img = '',
-  title = 'newTitle',
-  text = '',
-  link = ''
-}) {
+function createPostCard({img = '', title = 'newTitle', text = '', link = ''}) {
   const postWrapper = document.createElement('div');
   postWrapper.classList.add('post');
 
-  const bttn = createButton({
-    text: 'Read more...',
-    className: 'button',
-    link: link
-  });
+  const bttn = createButton({ text: 'Read more...', className: 'button', link: link});
 
   const postImg = createImgElem(img);
   const postTitle = createTitleElem(title);
