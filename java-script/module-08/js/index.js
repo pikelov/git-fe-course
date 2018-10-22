@@ -118,10 +118,7 @@ function onListClick({ target }) {
   imageFullview.setAttribute('src', target.dataset.fullview);
 
   images.forEach(image => {
-    if (image !== target) {
-      image.classList.remove('effect');
-    } else {
-      image.classList.add('effect');
-    }
+    console.log(image !== 'IMG');
+    image !== target ? image.classList.remove('effect') : image.classList.add('effect');
   });
 }
