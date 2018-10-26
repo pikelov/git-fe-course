@@ -1,5 +1,14 @@
 'use strict';
 
+const colors = [
+  '#FFFFFF',
+  '#F44336',
+  '#2196F3',
+  '#4CAF50',
+  '#FF9800',
+  '#009688',
+  '#795548'
+];
 const time = document.querySelector('.js-time');
 const btnStart = document.querySelector('.js-start');
 const btnTakeLap = document.querySelector('.js-take-lap');
@@ -12,7 +21,7 @@ const timer = {
   timerId: null,
   startTime: null,
   deltaTime: null,
-  onTick: lapsListUpdate,
+  onTick: getFormattedTime,
 
   start() {
     if (!this.isActive) {
@@ -53,7 +62,8 @@ const timer = {
   takeLap() {
     const li = document.createElement('li');
     li.textContent = time.textContent;
-
+    li.style.color = calcRandomColor(colors);
+    
     lapsList.appendChild(li);
   },
 
@@ -74,14 +84,16 @@ btnStart.addEventListener('click', timer.start.bind(timer));
 btnTakeLap.addEventListener('click', timer.takeLap.bind(timer));
 btnReset.addEventListener('click', timer.reset.bind(timer));
 
-function lapsListUpdate({ min, sec, ms }) {
-  if (min < 10) {
-    min = '0' + min;
-  }
-
-  if (sec < 10) {
-    sec = '0' + sec;
-  }
+function getFormattedTime({ min, sec, ms }) {
+  min = min < 10 ? (min = '0' + min) : min;
+  sec = sec < 10 ? (sec = '0' + sec) : sec;
 
   time.textContent = `${min}:${sec}.${ms}`;
-};
+}
+
+function calcRandomColor(arr) {
+  const randomVal = arr[Math.floor(Math.random() * arr.length)];
+  return randomVal;
+}
+
+
