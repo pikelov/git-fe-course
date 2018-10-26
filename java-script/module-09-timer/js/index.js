@@ -5,10 +5,10 @@ const btnStart = document.querySelector('.js-start');
 const btnTakeLap = document.querySelector('.js-take-lap');
 const btnReset = document.querySelector('.js-reset');
 const lapsList = document.querySelector('.js-laps');
-const btnPause = document.querySelector('.js-pause');
 
 const timer = {
   isActive: false,
+  isPaused: false,
   timerId: null,
   startTime: null,
   deltaTime: null,
@@ -16,12 +16,11 @@ const timer = {
 
   start() {
     if (!this.isActive) {
-      this.isActive = true;
-      btnStart.textContent = 'Pause';
-
-      console.log('START');
-
-      this.startTime = Date.now();
+      if (!this.isPaused) {
+        this.startTime = Date.now();
+      } else {
+        this.startTime = this.startTime + Date.now() - this.deltaTime;
+      }
 
       this.timerId = setInterval(() => {
         const currentTime = Date.now();
@@ -36,27 +35,42 @@ const timer = {
 
         this.onTick({ min, sec, ms });
       }, 100);
-    }
-  },
 
-  pause() {
-    if (this.isActive) {
-      
+      this.isActive = true;
+
+      btnStart.textContent = 'Pause';
+      console.log('START');
+    } else {
+      this.deltaTime = Date.now();
+      this.isActive = false;
+      this.isPaused = true;
+
+      clearInterval(this.timerId);
+      btnStart.textContent = 'Continue';
     }
   },
 
   takeLap() {
     const li = document.createElement('li');
     li.textContent = time.textContent;
+
     lapsList.appendChild(li);
   },
 
   reset() {
+    this.isActive = false;
+    this.isPaused = false;
+
+    clearInterval(this.timerId);
+
+    time.textContent = `00:00.0`;
+    btnStart.textContent = 'Start';
+
+    lapsList.innerHTML = ''; //clear lapsList
   }
 };
 
 btnStart.addEventListener('click', timer.start.bind(timer));
-btnPause.addEventListener('click', timer.pause.bind(timer));
 btnTakeLap.addEventListener('click', timer.takeLap.bind(timer));
 btnReset.addEventListener('click', timer.reset.bind(timer));
 
@@ -70,4 +84,4 @@ function lapsListUpdate({ min, sec, ms }) {
   }
 
   time.textContent = `${min}:${sec}.${ms}`;
-}
+};
