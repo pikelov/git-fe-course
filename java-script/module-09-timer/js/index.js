@@ -30,7 +30,6 @@ const timer = {
       } else {
         this.startTime = this.startTime + Date.now() - this.deltaTime;
       }
-
       this.timerId = setInterval(() => {
         const currentTime = Date.now();
 
@@ -76,7 +75,7 @@ const timer = {
     time.textContent = `00:00.0`;
     btnStart.textContent = 'Start';
 
-    lapsList.innerHTML = ''; //clear lapsList
+    lapsList.innerHTML = 'Lap time:'; //clear lapsList
   }
 };
 
