@@ -4,12 +4,13 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  min-height: 100vh;
 }
 
 .container {
   padding-top: 20px;
-  width: 800px;
-  min-width: 480px;
+  width: 880px;
+  min-width: 880px;
   margin: auto;
 }
 
@@ -17,7 +18,7 @@ body {
   min-width: 90px;
   height: 38px;
   padding: 10px 16px;
-  margin-right: 10px;
+
   border: 0;
   text-transform: uppercase;
   color: #f0f8ff;
@@ -33,14 +34,14 @@ body {
   box-shadow: 2px 3px 5px #362620, 1px 1px 5px #000000;
 }
 
-.search-form {
+.form {
   padding: 20px;
-  box-shadow: 1px 1px 3px 3px #1f1e1e , 1px 1px 5px #3b1717;
-  background-color: #dde0ae;
+  box-shadow: 1px 1px 1px 1px #1f1e1e , 1px 1px 5px #3b1717;
+  text-align: center;
 }
 
-.search-form input {
-  margin-right: 12px;
+.input-form input {
+  margin-right: 5px;
   padding: 4px;
   outline: 0;
   border: 0;
@@ -50,10 +51,22 @@ body {
   border-bottom: 2px solid #00796b;
 } 
 
-.search-form input::placeholder {
-  color: #616161;
-}
-
 .users-table {
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: inherit;
+  width: 780px;
+
 }
+
+.add-form input {
+  margin-right: 5px;
+  padding: 4px;
+  outline: 0;
+  border: 0;
+  color: #263238;
+  font-size: 18px;
+  background-color: transparent;
+  border-bottom: 2px solid #00796b;
+} 

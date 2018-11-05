@@ -11,21 +11,32 @@
 </head>
 <body>
     <div class="container">
-        <form class="search-form js-search-form">
-            <input type="text" name="input-value" placeholder="Enter user id number">
-            <button class="btn js-get-user" type="submit">get user</button>
+        <form class="form search-form js-search-form">
+            <button class="btn js-reset-list" type="reset">reset list</button>
+            <button class="btn js-get-user" type="submit">get user by id</button>
             <button class="btn js-post-all" type="submit">get all users </button>
-            <!-- <button class="btn js-edit-user" type="submit">edit</button> -->
+            <button class="btn js-edit-user" type="submit">edit</button>
             <button class="btn js-remove-user" type="submit">delete user</button>
+            <button class="btn js-add-user" type="submit">add user</button>
+
         </form>
 
-        <table class="users-table js-table" border="2">
+        
+        <form class="form input-form">
+            <input class="user-id" type="text" name="input-value" placeholder="Enter user id number">
+            <input class = "name" type="text" name="input-name" placeholder="Enter user name">
+            <input class = "age" type="text" name="input-value" placeholder="Enter user age">
+           
+          </form>
+
+          <table class="users-table js-table" border="2">
             <tr>
              <th>ID</th>
              <th>NAME</th>
              <th>AGE</th>
             </tr>
-        </table>    
+            <tbody></tbody>
+        </table> 
     </div>
     <script src="./js/utils.js"></script>
     <script src="./js/index.js"></script>
