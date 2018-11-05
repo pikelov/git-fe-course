@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 100px 50px;
+}
+
+.btn {
+  min-width: 90px;
+  height: 38px;
+  padding: 10px 16px;
+  margin-right: 10px;
+  border: 0;
+  text-transform: uppercase;
+  color: #f0f8ff;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #da6c6c;
+  box-shadow: 1px 2px 3px #362620, 1px 1px 2px #000000;
+
+}
+
+.btn:hover {
+  background-color: #c5761b;
+  box-shadow: 2px 3px 5px #362620, 1px 1px 5px #000000;
+}

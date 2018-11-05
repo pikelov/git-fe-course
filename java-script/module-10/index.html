@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form class="search-form js-search-form">
+            <input type="text" name="input-value" placeholder="Enter user id number">
+            <button class="btn js-post" type="submit">get user</button>
+            <button class="btn js-post-all" type="submit">get all users </button>
+            <button class="btn js-edit-user" type="submit">edit</button>
+            <button class="btn js-delete-user" type="submit">delete user</button>
+        </form>
+
+        <table class="users-table js-table" border="2">
+            <tr>
+             <th>ID</th>
+             <th>NAME</th>
+             <th>AGE</th>
+            </tr>
+        </table>    
+    </div>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
