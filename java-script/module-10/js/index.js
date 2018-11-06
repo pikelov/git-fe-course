@@ -1,19 +1,6 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
-  /*
-  Написать приложение для работы с REST сервисом, 
-  все функции делают запрос и возвращают Promise 
-  с которым потом можно работать. 
-
-  Сделать минимальный графический интерфейс в виде панели с полями и кнопками. 
-  А так же панелью для вывода результатов операций с бэкендом.
-*/
-  // const postBtn = $qs('.js-post');
-  // const postAllBtn = $qs('.js-post-all');
-  // const editBtn = $qs('.js-edit-user');
-  // const deleteBtn = $qs('.js-delete-user');
-  // const resultsTable = $qs('.js-table');
-
+ 
   const input = $qs('.user-id');
   const nameInput = $qs('.name');
   const ageInput = $qs('.age');
@@ -21,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const tbody = document.querySelector('tbody');
 
   searchForm.addEventListener('click', handlerClick);
-
-  // updateUser('5bdecaad918e950014f056d0', {name: 'BATMAN', age: 42})
 
   function getAllUsers() {
     fetch('https://test-users-api.herokuapp.com/users')
@@ -38,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getUserById(id) {
-    if (id === '') throw new Error('Empty input!');
+    if (id === '') throw new Error('Empty id input!');
     fetch(`https://test-users-api.herokuapp.com/users/${id}`)
       .then(response => {
         if (response.ok) return response.json();
@@ -79,13 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => {
         if (response.ok) return response.json();
 
-        throw new Error('Failed while fetched');
+        throw new Error('Failed while fetched :' + response.statusText);
       })
       .then(data => console.log(data))
-      .catch(err => console.log('Fetch error:', err));
+      .catch(err => console.log('Fetch error:' + err));
   }
 
   function updateUser(id, user) {
+    console.log(typeof ageInput.value);
+
     fetch(`https://test-users-api.herokuapp.com/users/${id}`, {
       method: 'PUT',
       body: JSON.stringify(user),
@@ -97,14 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => {
         if (response.ok) return response.json();
 
-        throw new Error('Failed while update');
+        throw new Error('Failed while update' + response.statusText);
       })
       .then(data => {
         console.log(data);
         resetList();
         updateListForOneUser(data);
       })
-      .catch(err => console.log('Fetch error:', err));
+      .catch(err => console.log('Fetch error:' + err));
   }
 
   function resetList() {
@@ -118,13 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handlerClick(evt) {
     evt.preventDefault();
-
     const id = input.value;
     let target = evt.target;
     const user = {
       name: nameInput.value,
       age: ageInput.value
     };
+
+    document.querySelector('input').value = '';
 
     if (target.nodeName !== 'BUTTON') return;
     switch (true) {
