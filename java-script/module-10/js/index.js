@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://test-users-api.herokuapp.com/users')
       .then(response => {
         if (response.ok) return response.json();
-        throw new Error('Failed while fetched');
+        throw new Error('Failed while fetched' + response.statusText);
       })
       .then(data => {
         console.log(data);
         updateList(data);
       })
-      .catch(err => console.log('Fetch error:', err));
+      .catch(err => console.log('Error:', err));
   }
 
   function getUserById(id) {
@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch(`https://test-users-api.herokuapp.com/users/${id}`)
       .then(response => {
         if (response.ok) return response.json();
-        throw new Error('Failed while fetched');
+        throw new Error('Failed while fetched' + response.statusText);
       })
       .then(data => {
         console.log(data);
         updateListForOneUser(data);
       })
-      .catch(err => console.log('Fetch error:', err));
+      .catch(err => console.log('Error:', err));
   }
 
   function addUser(userObj) {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetList();
         updateListForOneUser(data);
       })
-      .catch(err => console.log('Fetch error:', err));
+      .catch(err => console.log('Error:', err));
   }
 
   function removeUser(id) {
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Failed while fetched :' + response.statusText);
       })
       .then(data => console.log(data))
-      .catch(err => console.log('Fetch error:' + err));
+      .catch(err => console.log('Error:' + err));
   }
 
   function updateUser(id, user) {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetList();
         updateListForOneUser(data);
       })
-      .catch(err => console.log('Fetch error:' + err));
+      .catch(err => console.log('Error:' + err));
   }
 
   function resetList() {
@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+  
   function updateList(obj) {
     table.setAttribute('border', 1);
 
