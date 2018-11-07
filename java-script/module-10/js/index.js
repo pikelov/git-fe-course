@@ -1,11 +1,10 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
- 
   const input = $qs('.user-id');
   const nameInput = $qs('.name');
   const ageInput = $qs('.age');
   const searchForm = $qs('.js-search-form');
-  const tbody = document.querySelector('tbody');
+  const table = $qs('.js-table');
 
   searchForm.addEventListener('click', handlerClick);
 
@@ -95,12 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetList() {
-    const tbody = document.querySelector('tbody');
-    tbody.innerHTML = `<tr>
-    <th>ID</th>
-    <th>NAME</th>
-    <th>AGE</th>
-   </tr>`;
+    table.setAttribute('border', 0);
+    table.innerHTML = `
+    <thead>
+   </thead>
+   <tbody></tbody>`;
   }
 
   function handlerClick(evt) {
@@ -111,8 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
       name: nameInput.value,
       age: ageInput.value
     };
-
-    document.querySelector('input').value = '';
 
     if (target.nodeName !== 'BUTTON') return;
     switch (true) {
@@ -142,7 +138,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   function updateList(obj) {
-    const tbody = document.querySelector('tbody');
+    table.setAttribute('border', 1);
+
+    const tbody = $qs('tbody');
+    const thead = $qs('thead');
+    const tHeader = `
+    <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>AGE</th>
+    </tr>`;
+
+    thead.innerHTML = tHeader;
+
     obj.data.map(el => {
       let item = `<tr>
        <td>${el.id}</td>
@@ -154,11 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateListForOneUser(data) {
+    table.setAttribute('border', 1);
+    const tbody = $qs('tbody');
+    const thead = $qs('thead');
+    const tHeader = `<tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>AGE</th>
+    </tr>`;
     let item = `<tr>
     <td>${data.data.id || data.data._id}</td>
     <td>${data.data.name}</td>
     <td>${data.data.age}</td>
      </tr>`;
     tbody.innerHTML += item;
+    thead.innerHTML = tHeader;
   }
 });
