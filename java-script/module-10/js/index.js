@@ -1,143 +1,12 @@
-'use strict';
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 document.addEventListener('DOMContentLoaded', () => {
-  const input = $qs('.user-id');
-  const nameInput = $qs('.name');
-  const ageInput = $qs('.age');
-  const searchForm = $qs('.js-search-form');
+  const form = $qs('.form');
+  const [id, name, age] = form.elements;
+  const buttons = $qs('.buttons');
   const table = $qs('.js-table');
+  const url = 'https://test-users-api.herokuapp.com/users/';
 
-  searchForm.addEventListener('click', handlerClick);
-
-  function getAllUsers() {
-    fetch('https://test-users-api.herokuapp.com/users')
-      .then(response => {
-        if (response.ok) return response.json();
-        throw new Error('Failed while fetched' + response.statusText);
-      })
-      .then(data => {
-        console.log(data);
-        updateList(data);
-      })
-      .catch(err => console.log('Error:', err));
-  }
-
-  function getUserById(id) {
-    if (id === '') throw new Error('Empty id input!');
-    fetch(`https://test-users-api.herokuapp.com/users/${id}`)
-      .then(response => {
-        if (response.ok) return response.json();
-        throw new Error('Failed while fetched' + response.statusText);
-      })
-      .then(data => {
-        console.log(data);
-        updateListForOneUser(data);
-      })
-      .catch(err => console.log('Error:', err));
-  }
-
-  function addUser(userObj) {
-    fetch('https://test-users-api.herokuapp.com/users', {
-      method: 'POST',
-      body: JSON.stringify(userObj),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => {
-        if (response.ok) return response.json();
-        throw new Error('Failed while fetched');
-      })
-      .then(data => {
-        console.log(data);
-        resetList();
-        updateListForOneUser(data);
-      })
-      .catch(err => console.log('Error:', err));
-  }
-
-  function removeUser(id) {
-    fetch(`https://test-users-api.herokuapp.com/users/${id}`, {
-      method: 'DELETE'
-    })
-      .then(response => {
-        if (response.ok) return response.json();
-
-        throw new Error('Failed while fetched :' + response.statusText);
-      })
-      .then(data => console.log(data))
-      .catch(err => console.log('Error:' + err));
-  }
-
-  function updateUser(id, user) {
-    console.log(typeof ageInput.value);
-
-    fetch(`https://test-users-api.herokuapp.com/users/${id}`, {
-      method: 'PUT',
-      body: JSON.stringify(user),
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json; charset=UTF-8'
-      }
-    })
-      .then(response => {
-        if (response.ok) return response.json();
-
-        throw new Error('Failed while update' + response.statusText);
-      })
-      .then(data => {
-        console.log(data);
-        resetList();
-        updateListForOneUser(data);
-      })
-      .catch(err => console.log('Error:' + err));
-  }
-
-  function resetList() {
-    table.setAttribute('border', 0);
-    table.innerHTML = `
-    <thead>
-   </thead>
-   <tbody></tbody>`;
-  }
-
-  function handlerClick(evt) {
-    evt.preventDefault();
-    const id = input.value;
-    let target = evt.target;
-    const user = {
-      name: nameInput.value,
-      age: ageInput.value
-    };
-
-    if (target.nodeName !== 'BUTTON') return;
-    switch (true) {
-      case target.classList.contains('js-get-user'): {
-        return getUserById(id);
-      }
-
-      case target.classList.contains('js-post-all'): {
-        return getAllUsers();
-      }
-
-      case target.classList.contains('js-remove-user'): {
-        return removeUser(id);
-      }
-
-      case target.classList.contains('js-reset-list'): {
-        console.log('List reseted!');
-        return resetList();
-      }
-
-      case target.classList.contains('js-edit-user'): {
-        return updateUser(id, user);
-      }
-      case target.classList.contains('js-add-user'): {
-        return addUser(user);
-      }
-    }
-  }
-  
   function updateList(obj) {
     table.setAttribute('border', 1);
 
@@ -152,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     thead.innerHTML = tHeader;
 
-    obj.data.map(el => {
-      let item = `<tr>
+    // eslint-disable-next-line array-callback-return
+    obj.data.map((el) => {
+      const item = `<tr>
        <td>${el.id}</td>
        <td>${el.name}</td>
        <td>${el.age}</td>
@@ -171,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <th>NAME</th>
     <th>AGE</th>
     </tr>`;
-    let item = `<tr>
+    const item = `<tr>
     <td>${data.data.id || data.data._id}</td>
     <td>${data.data.name}</td>
     <td>${data.data.age}</td>
@@ -179,4 +49,151 @@ document.addEventListener('DOMContentLoaded', () => {
     tbody.innerHTML += item;
     thead.innerHTML = tHeader;
   }
+
+  function resetList() {
+    table.setAttribute('border', 0);
+    table.innerHTML = `
+    <thead>
+   </thead>
+   <tbody></tbody>`;
+  }
+
+  function getAllUsers() {
+    fetch(url)
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error(`Failed while fetched${response.statusText}`);
+      })
+      .then((data) => {
+        console.log(data);
+        updateList(data);
+      })
+      .catch(err => console.log('Error:', err));
+  }
+
+  function getUserById() {
+    if (id === '') throw new Error('Empty id input!');
+    return fetch(url + id.value)
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error(`Failed while fetched: ${response.statusText}`);
+      })
+      .then((data) => {
+        console.log(data);
+        updateListForOneUser(data);
+      })
+      .catch(err => console.log('Error:', err));
+  }
+
+  function addUser() {
+    const user = {
+      name: name.value,
+      age: age.value,
+    };
+
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (response.ok) return response.json();
+        throw new Error('Failed while fetched');
+      })
+      .then((data) => {
+        console.log(data);
+        resetList();
+        updateListForOneUser(data);
+      })
+      .catch(err => console.log('Error:', err));
+  }
+
+  function removeUser() {
+    fetch(url + id.value, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (response.ok) return response.json();
+
+        throw new Error(`Failed while fetched :${response.statusText}`);
+      })
+      .then((data) => {
+        console.log(data);
+        resetList();
+        updateListForOneUser(data);
+      })
+      .catch(err => console.log(`Error:${err}`));
+  }
+
+  function updateUser() {
+    const user = {
+      name: name.value,
+      age: age.value,
+    };
+
+    console.log(user.age);
+    fetch(url + id.value, {
+      method: 'PUT',
+      body: JSON.stringify(user),
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => {
+        if (response.ok) return response.json();
+
+        throw new Error(`Failed while update${response.statusText}`);
+      })
+      .then((data) => {
+        console.log(data);
+        resetList();
+        updateListForOneUser(data);
+      })
+      .catch(err => console.log(`Error:${err}`));
+  }
+
+
+  function handleClick(evt) {
+    evt.preventDefault();
+    const target = evt.target;
+
+    if (target.nodeName !== 'BUTTON') return;
+    // eslint-disable-next-line default-case
+    switch (true) {
+      case target.classList.contains('js-get-user'): {
+        getUserById(id);
+        break;
+      }
+
+      case target.classList.contains('js-post-all'): {
+        getAllUsers();
+        break;
+      }
+
+      case target.classList.contains('js-remove-user'): {
+        removeUser(id);
+        break;
+      }
+
+      case target.classList.contains('js-edit-user'): {
+        updateUser();
+        break;
+      }
+
+      case target.classList.contains('js-add-user'): {
+        addUser();
+        break;
+      }
+      case target.classList.contains('js-reset-list'): {
+        console.log('List reseted!');
+        resetList();
+      }
+    }
+  }
+
+  buttons.addEventListener('click', handleClick);
 });

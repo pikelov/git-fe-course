@@ -11,21 +11,21 @@
 </head>
 <body>
     <div class="container">
-        <form class="form search-form js-search-form">
-            <button class="btn js-reset-list" type="reset">reset list</button>
-            <button class="btn js-get-user" type="submit">get user by id</button>
-            <button class="btn js-post-all" type="submit">get all users </button>
-            <button class="btn js-edit-user" type="submit">edit</button>
-            <button class="btn js-remove-user" type="submit">delete user</button>
-            <button class="btn js-add-user" type="submit">add user</button>
+        <ul class="buttons">
+            <li><button class="btn js-reset-list" type="reset">reset list</button></li>
+            <li><button class="btn js-get-user" type="submit">get user by id</button></li>
+            <li><button class="btn js-post-all" type="submit">get all users </button></li>
+            <li><button class="btn js-edit-user" type="submit">edit</button></li>
+            <li><button class="btn js-remove-user" type="submit">delete user</button></li>
+            <li><button class="btn js-add-user" type="submit">add user</button></li>
 
-        </form>
+        </ul>
 
         
         <form class="form input-form">
-            <input class="user-id" type="text" name="input-value" placeholder="Enter user id number">
-            <input class = "name" type="text" name="input-name" placeholder="Enter user name">
-            <input class = "age" type="text" name="input-value" placeholder="Enter user age">
+            <input class="id" type="text" name="id" placeholder="Enter user id number">
+            <input class = "name" type="text" name="name" placeholder="Enter user name">
+            <input class = "age" type="number" name="age" placeholder="Enter user age">
            
           </form>
 
@@ -38,3 +38,4 @@
     <script src="./js/index.js"></script>
 </body>
 </html>
+
