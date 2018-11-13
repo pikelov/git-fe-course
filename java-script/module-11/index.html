@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Templating M11</title>
 </head>
 <body>
 
@@ -38,6 +40,28 @@
         <button type="reset">Clear</button>
       </form>
 
+
+    <div class="items-container"></div>
+    
+      <template id="collection-item">
+        {{#each this}}
+        <div class="item">
+          <img src="{{img}}" alt="{{name}}" width="220">
+          <p class="name">{{name}}</p>
+          <ul class="description-list">
+            <li>{{name}}</li>
+            <li>Size: {{size}}</li>
+            <li>Color: {{color}}</li>
+            <li>Price: {{price}}</li>
+            <li>Release date: {{release_date}}</li>
+          </ul>
+          <p class="item-description">{{descr}}</p>
+        </div>
+        {{/each}}
+      </template>
+
       
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>

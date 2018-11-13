@@ -1,0 +1,14 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+.item {
+  display: inline-block;
+  width: 230px;
+  height: 410px;
+  min-width: 230px;
+  padding: 10px;
+  background-color: rgba(229, 236, 204, 0.664);
+  margin-bottom: 4px;
+}

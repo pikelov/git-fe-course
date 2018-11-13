@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+'use strict';
 const laptops = [
   {
     size: 13,
@@ -91,3 +93,55 @@ const laptops = [
   },
 ];
 
+const container = document.querySelector('.items-container');
+const inputForm = document.querySelector('.js-form');
+const source = document.querySelector('#collection-item').innerHTML.trim();
+const template = Handlebars.compile(source);
+const filter = { size: [], color: [], release_date: [] };
+
+
+// Sorting types of values from checkbox array & pushing to filter obj
+function sortCheckedArray(array, obj) {
+  array.forEach((elem) => {
+    switch (true) {
+      case (elem.name === 'size'): {
+        obj.size.push(elem.value);
+        break;
+      }
+      case (elem.name === 'color'): {
+        obj.color.push(elem.value);
+        break;
+      }
+      case (elem.name === 'release_date'): {
+        obj.release_date.push(elem.value);
+        console.log(filter);
+        break;
+      }
+
+      default: { alert('blin ja hz poka chto tyt bydet'); }
+    }
+  });
+}
+
+
+// Getting checked input checkboxes & sort
+function getCheckedFilters() {
+  const checked = Array.from(document.querySelectorAll('input:checked'));
+  sortCheckedArray(checked, filter);
+}
+
+function filterItemsToRender({ size, color, release_date}) {
+//  ???
+}
+
+function renderFiltredItems() {}
+
+function handleClick(evt) {
+  evt.preventDefault();
+  getCheckedFilters();
+  filterItemsToRender(filter);
+}
+
+inputForm.addEventListener('submit', handleClick);
+const markup = template(laptops);
+container.insertAdjacentHTML('afterbegin', markup);
