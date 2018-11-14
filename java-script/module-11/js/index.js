@@ -140,7 +140,6 @@ function resetFilters() {
   filter.size = [];
   filter.color = [];
   filter.release_date = [];
-  console.log(filter);
 }
 
 
@@ -167,6 +166,7 @@ function renderFiltredItems(arrObj) {
 
 
 function onSubmit(evt) {
+  
   evt.preventDefault();
 
   const checkedFilters = getCheckedFilters();
@@ -177,14 +177,10 @@ function onSubmit(evt) {
 
   renderFiltredItems(itemsToRender);
   resetFilters();
-  inputForm.reset();
+
 }
 
 function onReset(event) {
-  console.log(button.nodeType);
-  const nodeType = target.nodeType;
-  console.log(nodeType);
-  if (nodeType !== '') return;
   
   resetFilters();
   container.innerHTML = '';
