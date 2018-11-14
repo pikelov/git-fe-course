@@ -3,6 +3,16 @@ body {
   
 }
 
+section {
+  display:inline-block;
+  min-width: 25%;
+  
+}
+
+.form {
+  min-width: 1030px;
+  background-color: rgb(93, 161, 124);
+}
 .item {
   display: inline-block;
   width: 230px;
@@ -11,4 +21,10 @@ body {
   padding: 10px;
   background-color: rgba(229, 236, 204, 0.664);
   margin-bottom: 4px;
+}
+
+.items-container {
+  min-width: 1030px;
+  margin: auto;
+  padding: 10px;
 }

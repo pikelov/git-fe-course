@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable */
 'use strict';
 const laptops = [
   {
@@ -118,7 +118,7 @@ function sortCheckedArray(array, obj) {
         break;
       }
 
-      default: { alert('blin ja hz poka chto tyt bydet'); }
+      default: { alert('blin kak sdelat 4erez reduce?'); }
     }
   });
 }
@@ -126,22 +126,71 @@ function sortCheckedArray(array, obj) {
 
 // Getting checked input checkboxes & sort
 function getCheckedFilters() {
-  const checked = Array.from(document.querySelectorAll('input:checked'));
-  sortCheckedArray(checked, filter);
+  const checked = Array.from(inputForm.querySelectorAll('input[type="checkbox"]:checked'));
+  return checked;
 }
 
-function filterItemsToRender({ size, color, release_date}) {
-//  ???
+
+function matchArr (arr, valueToCompare) {
+  return arr.length === 0 || arr.includes(valueToCompare);
 }
 
-function renderFiltredItems() {}
 
-function handleClick(evt) {
+function resetFilters() {
+  filter.size = [];
+  filter.color = [];
+  filter.release_date = [];
+  console.log(filter);
+}
+
+
+function filterItemsToRender(laptops) {
+const filteredItems = laptops.filter((laptop) => {
+  const matchSize = matchArr(filter.size, String(laptop.size));
+  const matchColor = matchArr(filter.color, laptop.color);
+  const matchDate = matchArr(filter.release_date, String(laptop.release_date));
+
+  return matchSize && matchColor && matchDate;
+})
+console.log('Here is filtered array: ',filteredItems);
+if (filteredItems.length === 0) {
+   alert('Sorry right now we are out of laptops of this model! Try to search other models.');
+}
+return filteredItems;
+}
+
+
+function renderFiltredItems(arrObj) {
+  const markup = template(arrObj );
+  container.innerHTML = markup;
+}
+
+
+function onSubmit(evt) {
   evt.preventDefault();
-  getCheckedFilters();
-  filterItemsToRender(filter);
+
+  const checkedFilters = getCheckedFilters();
+
+  sortCheckedArray(checkedFilters, filter);
+
+  const itemsToRender = filterItemsToRender(laptops);
+
+  renderFiltredItems(itemsToRender);
+  resetFilters();
+  inputForm.reset();
 }
 
-inputForm.addEventListener('submit', handleClick);
-const markup = template(laptops);
-container.insertAdjacentHTML('afterbegin', markup);
+function onReset(event) {
+  console.log(button.nodeType);
+  const nodeType = target.nodeType;
+  console.log(nodeType);
+  if (nodeType !== '') return;
+  
+  resetFilters();
+  container.innerHTML = '';
+}
+
+inputForm.addEventListener('submit', onSubmit);
+inputForm.addEventListener('reset', onReset);
+
+
