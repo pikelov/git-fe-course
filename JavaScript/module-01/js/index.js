@@ -42,10 +42,3 @@ if (enterLogin === null) {
     alert(msgWelcome);
   }
 }
-
-
-
-
-
-  
-  

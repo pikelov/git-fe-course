@@ -1,9 +1,13 @@
-html {
-  background-color: black;
+*{
+  box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
   padding: 30px;
-  background-image:  url(../img/background-main-08.jpeg);
+  background-image: url(../img/background-main-08.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 li {
@@ -13,7 +17,6 @@ li {
   max-width: 80%;
   margin-left: auto;
   margin-right: auto;
-  
 }
 .preview {
   margin: 3px 0 0 0;
@@ -29,8 +32,8 @@ li {
 
 .preview :hover {
   filter: sepia(60%);
-  
-  box-shadow: 2px 3px 5px  #063b8a, 1px 1px 5px rgba(255, 255, 255, 1);
+
+  box-shadow: 2px 3px 5px #063b8a, 1px 1px 5px rgba(255, 255, 255, 1);
 }
 
 .image-fullview {
