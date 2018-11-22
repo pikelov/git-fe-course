@@ -1,4 +1,4 @@
-/* eslint-disable */
+/*eslint-disable*/
 'use strict';
 const laptops = [
   {
@@ -9,7 +9,7 @@ const laptops = [
     name: 'Macbook Air White 13"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 13,
@@ -19,7 +19,7 @@ const laptops = [
     name: 'Macbook Air Gray 13"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 13,
@@ -29,7 +29,7 @@ const laptops = [
     name: 'Macbook Air Black 13"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 15,
@@ -39,7 +39,7 @@ const laptops = [
     name: 'Macbook Air White 15"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 15,
@@ -49,7 +49,7 @@ const laptops = [
     name: 'Macbook Pro Gray 15"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 15,
@@ -59,7 +59,7 @@ const laptops = [
     name: 'Macbook Pro Black 15"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 17,
@@ -69,7 +69,7 @@ const laptops = [
     name: 'Macbook Air White 17"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 17,
@@ -79,7 +79,7 @@ const laptops = [
     name: 'Macbook Pro Gray 17"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
   },
   {
     size: 17,
@@ -89,8 +89,8 @@ const laptops = [
     name: 'Macbook Pro Black 17"',
     img: 'http://demo.posthemes.com/pos_zadademo/images/placeholder.png',
     descr:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.',
-  },
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, beatae.'
+  }
 ];
 
 const container = document.querySelector('.items-container');
@@ -99,42 +99,42 @@ const source = document.querySelector('#collection-item').innerHTML.trim();
 const template = Handlebars.compile(source);
 const filter = { size: [], color: [], release_date: [] };
 
-
 // Sorting types of values from checkbox array & pushing to filter obj
-function sortCheckedArray(array, obj) {
-  array.forEach((elem) => {
-    switch (true) {
-      case (elem.name === 'size'): {
-        obj.size.push(elem.value);
-        break;
-      }
-      case (elem.name === 'color'): {
-        obj.color.push(elem.value);
-        break;
-      }
-      case (elem.name === 'release_date'): {
-        obj.release_date.push(elem.value);
-        console.log(filter);
-        break;
-      }
+// function sortCheckedArray(array, obj) {
+//   array.forEach((elem) => {
+//     switch (true) {
+//       case elem.name === 'size': {
+//         obj.size.push(elem.value);
+//         break;
+//       }
+//       case elem.name === 'color': {
+//         obj.color.push(elem.value);
+//         break;
+//       }
+//       case elem.name === 'release_date': {
+//         obj.release_date.push(elem.value);
+//         console.log(filter);
+//         break;
+//       }
 
-      default: { alert('blin kak sdelat 4erez reduce?'); }
-    }
-  });
-}
-
+//       default: {
+//         alert('blin kak sdelat 4erez reduce?');
+//       }
+//     }
+//   });
+// }
 
 // Getting checked input checkboxes & sort
-function getCheckedFilters() {
-  const checked = Array.from(inputForm.querySelectorAll('input[type="checkbox"]:checked'));
-  return checked;
-}
+// function getCheckedFilters() {
+//   const checked = Array.from(
+//     inputForm.querySelectorAll('input[type="checkbox"]:checked')
+//   );
+//   return checked;
+// }
 
-
-function matchArr (arr, valueToCompare) {
+function matchArr(arr, valueToCompare) {
   return arr.length === 0 || arr.includes(valueToCompare);
 }
-
 
 function resetFilters() {
   filter.size = [];
@@ -142,51 +142,58 @@ function resetFilters() {
   filter.release_date = [];
 }
 
+function filterItemsToRender(objToFilter) {
+  const filteredItems = objToFilter.filter((laptop) => {
+    const matchSize = matchArr(filter.size, String(laptop.size));
+    const matchColor = matchArr(filter.color, laptop.color);
+    const matchDate = matchArr(
+      filter.release_date,
+      String(laptop.release_date),
+    );
 
-function filterItemsToRender(laptops) {
-const filteredItems = laptops.filter((laptop) => {
-  const matchSize = matchArr(filter.size, String(laptop.size));
-  const matchColor = matchArr(filter.color, laptop.color);
-  const matchDate = matchArr(filter.release_date, String(laptop.release_date));
-
-  return matchSize && matchColor && matchDate;
-})
-console.log('Here is filtered array: ',filteredItems);
-if (filteredItems.length === 0) {
-   alert('Sorry right now we are out of laptops of this model! Try to search other models.');
+    return matchSize && matchColor && matchDate;
+  });
+  console.log('Here is filtered array: ', filteredItems);
+  if (filteredItems.length === 0) {
+    alert(
+      'Sorry right now we are out of laptops of this model! Try to search other models.'
+    );
+  }
+  return filteredItems;
 }
-return filteredItems;
-}
-
 
 function renderFiltredItems(arrObj) {
-  const markup = template(arrObj );
+  const markup = template(arrObj);
   container.innerHTML = markup;
 }
 
-
 function onSubmit(evt) {
-  
   evt.preventDefault();
 
-  const checkedFilters = getCheckedFilters();
+  const sections = inputForm.querySelectorAll('section');
 
-  sortCheckedArray(checkedFilters, filter);
-
+  sections.forEach((item) => {
+    console.log('ITEM', item);
+    const checked = Array.from(
+      item.querySelectorAll('input[type="checkbox"]:checked')
+    );
+    if (!checked) {
+      return;
+    }
+    checked.forEach((checkboxItem) => {
+      console.log('-- :', filter[item.dataset.group]);
+      filter[item.dataset.group].push(checkboxItem.value);
+    });
+  });
   const itemsToRender = filterItemsToRender(laptops);
-
   renderFiltredItems(itemsToRender);
   resetFilters();
-
 }
 
-function onReset(event) {
-  
+function onReset() {
   resetFilters();
   container.innerHTML = '';
 }
 
 inputForm.addEventListener('submit', onSubmit);
 inputForm.addEventListener('reset', onReset);
-
-
