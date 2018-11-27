@@ -9,10 +9,10 @@ export default class View extends EventEmitter {
     this.input = this.form.querySelector('.form-input');
     this.notes = document.querySelector('.notes');
 
-    this.form.addEventListener('submit', this.handelAdd.bind(this));
+    this.form.addEventListener('submit', this.handleAdd.bind(this));
   }
 
-  handelAdd(evt) {
+  handleAdd(evt) {
     evt.preventDefault();
 
     const valueInput = this.input.value;
@@ -34,7 +34,7 @@ export default class View extends EventEmitter {
     title.setAttribute('target', '_blank');
 
     const button = document.createElement('button');
-    button.textContent = 'X';
+    button.textContent = 'Del';
     button.dataset.action = 'remove';
     button.classList.add('close');
 
@@ -53,7 +53,7 @@ export default class View extends EventEmitter {
   }
 
   addNotes() {
-    storage.get().forEach(element => {
+    storage.get().forEach((element) => {
       this.addNote(element);
     });
   }
@@ -61,10 +61,10 @@ export default class View extends EventEmitter {
   appendEventListners(item) {
     const removeBtn = item.querySelector('[data-action="remove"]');
 
-    removeBtn.addEventListener('click', this.handelRemove.bind(this));
+    removeBtn.addEventListener('click', this.handleRemove.bind(this));
   }
 
-  handelRemove({ target }) {
+  handleRemove({ target }) {
     const parent = target.closest('.item');
 
     this.emit('remove', parent.dataset.id);

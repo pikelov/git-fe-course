@@ -1,4 +1,4 @@
-export const set = value => {
+export const set = (value) => {
   localStorage.setItem('url-finder', JSON.stringify(value));
 };
 
