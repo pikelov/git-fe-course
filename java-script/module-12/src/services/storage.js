@@ -3,7 +3,11 @@ export const set = (value) => {
 };
 
 export const get = () => {
-  const date = localStorage.getItem('url-finder');
+  const data = localStorage.getItem('url-finder');
 
-  return date ? JSON.parse(date) : null;
+  return data ? JSON.parse(data) : null;
+};
+
+export const remove = (id) => {
+  localStorage.removeItem(id);
 };

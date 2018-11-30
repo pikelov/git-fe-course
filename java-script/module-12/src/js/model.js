@@ -1,4 +1,4 @@
-const uuidv4 = require('uuid/v4');
+const v4 = require('uuid/v4');
 
 import * as storage from '../services/storage';
 
@@ -9,8 +9,8 @@ export default class Model {
 
   addItem(title) {
     const item = {
-      id: uuidv4(),
-      title
+      id: v4(),
+      title,
     };
 
     this.items.push(item);
@@ -22,5 +22,6 @@ export default class Model {
 
   removeItem(id) {
     this.items = this.items.filter(item => item.id !== id);
+    storage.remove(id);
   }
 }

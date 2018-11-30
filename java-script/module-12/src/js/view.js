@@ -73,5 +73,6 @@ export default class View extends EventEmitter {
   removeNote(id) {
     const item = this.notes.querySelector(`[data-id="${id}"]`);
     this.notes.removeChild(item);
+    localStorage.removeItem(item);
   }
 }
