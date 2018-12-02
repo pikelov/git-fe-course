@@ -9,5 +9,7 @@ export const get = () => {
 };
 
 export const remove = (id) => {
-  localStorage.removeItem(id);
+  const data = JSON.parse(localStorage.getItem('url-finder'));
+  const resData = data.filter(item => item.id !== id);
+  localStorage.setItem('url-finder', JSON.stringify(resData));
 };
