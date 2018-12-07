@@ -8,6 +8,11 @@ export default class Controller {
   }
 
   addNote(title) {
+    if (this.model.checkItemInItems(title)) {
+      alert(`Note ${title} already exist!`);
+      return;
+    }
+
     const item = this.model.addItem(title);
     this.view.addNote(item);
   }

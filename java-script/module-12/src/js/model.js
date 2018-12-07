@@ -3,14 +3,14 @@ const v4 = require('uuid/v4');
 import * as storage from '../services/storage';
 
 export default class Model {
-  constructor(items = []) {
-    this.items = items;
+  constructor(items = storage.get()) {
+    items ? (this.items = items) : (this.items = []);
   }
 
   addItem(title) {
     const item = {
       id: v4(),
-      title,
+      title
     };
 
     this.items.push(item);
@@ -23,5 +23,10 @@ export default class Model {
   removeItem(id) {
     this.items = this.items.filter(item => item.id !== id);
     storage.remove(id);
+  }
+
+  checkItemInItems(title) {
+    if (!this.items) return;
+    return this.items.some(item => item.title === title);
   }
 }

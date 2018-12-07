@@ -20,6 +20,8 @@ export default class View extends EventEmitter {
     if (valueInput === '') return;
 
     this.emit('add', valueInput);
+
+    this.form.reset();
   }
 
   creatNote(note) {
@@ -48,12 +50,12 @@ export default class View extends EventEmitter {
   addNote(note) {
     const item = this.creatNote(note);
 
-    this.form.reset();
-    this.notes.appendChild(item);
+    this.notes.insertAdjacentElement('afterbegin', item);
   }
 
   addNotes() {
-    storage.get().forEach((element) => {
+    if (storage.get() === null) return;
+    storage.get().forEach(element => {
       this.addNote(element);
     });
   }
@@ -73,6 +75,5 @@ export default class View extends EventEmitter {
   removeNote(id) {
     const item = this.notes.querySelector(`[data-id="${id}"]`);
     this.notes.removeChild(item);
-    localStorage.removeItem(item);
   }
 }
