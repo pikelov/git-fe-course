@@ -23,6 +23,7 @@ export default class Model {
   removeItem(id) {
     this.items = this.items.filter(item => item.id !== id);
     storage.remove(id);
+    return true;
   }
 
   checkItemInItems(title) {
