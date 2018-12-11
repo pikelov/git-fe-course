@@ -1,5 +1,4 @@
 import Model from '../js/model';
-const v4 = require('uuid/v4');
 
 describe('Model class', () => {
     it('Should create item instance', () => {
