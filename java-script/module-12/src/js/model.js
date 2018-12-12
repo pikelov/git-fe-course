@@ -4,7 +4,7 @@ import * as storage from '../services/storage';
 
 export default class Model {
   constructor(items = storage.get()) {
-    items ? (this.items = items) : (this.items = []);
+    this.items = items || [];
   }
 
   addItem(title) {
