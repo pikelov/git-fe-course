@@ -1,27 +1,37 @@
 import Model from '../js/model';
 
 describe('Model class', () => {
-    it('Should create item instance', () => {
-        const item = new Model([item]);
+    let modelInstance;
 
-        expect(item instanceof Model).toBe(true);
+    beforeEach(() => {
+        modelInstance = new Model();
+    });
+
+    it('Should create item instance', () => {
+        expect(modelInstance).toBeDefined();
+        expect(modelInstance instanceof Model).toBe(true);
+        expect(modelInstance.items.length).toBe(0);
     });
 
     it('Should add item', () => {
-        const item = new Model();
+        modelInstance.addItem('title');
 
-        expect(item.addItem('title')).toBeDefined();
+        expect(modelInstance.items.length).toBeGreaterThan(0);
     });
 
     it('Should remove item', () => {
-        const item = new Model();
+        const id = modelInstance.items[0].id;
 
-        expect(item.removeItem('id')).toBe(true);
+        modelInstance.removeItem(id);
+
+        expect(modelInstance.items.length).toBe(0);
     });
 
     it('Should check if item already in items', () => {
-        const item = new Model();
+        modelInstance.addItem('new title');
 
-        expect(item.checkItemInItems('id')).toBeDefined();
+        expect(modelInstance.checkItemInItems('new title')).toBeTruthy();
+
+        expect(modelInstance.checkItemInItems('new title 2')).toBeFalsy();
     })
-})
+});
