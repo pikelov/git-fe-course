@@ -1,0 +1,185 @@
+.main {
+  max-width: 88rem;
+  margin: 0 auto;
+  margin-bottom: 5rem;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.card {
+  width: 210px;
+  height: 122px;
+  display: flex;
+  justify-content: center;
+  background-color: $primery-color-img;
+  margin-right: 13px;
+  margin-bottom: 13px;
+  position: relative;
+
+  &:nth-child(4n) {
+    margin-right: 0px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
+
+.modal {
+  display: none;
+  margin: 0; /* убираем отступы */
+  padding: 0; /* убираем отступы */
+  position: fixed; /* фиксируем положение */
+  top: 0; /* растягиваем блок по всему экрану */
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* полупрозрачный цвет фона */
+  z-index: 2; /* выводим фон поверх всех слоев на странице браузера */
+  opacity: 1; /* Делаем невидимым */
+  pointer-events: none; /* элемент невидим для событий мыши */
+
+  &__img {
+    width: 70rem;
+    height: 41rem;
+    margin: 0 auto;
+    display: block;
+    z-index: 1000;
+    margin-top: 10%;
+  }
+
+  &__buttons {
+    width: 114px;
+    height: 35px;
+    background-color: #673ab7;
+    margin: 0 auto;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 13px;
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+
+  .button-left {
+    position: relative;
+
+    &:before {
+      content: url(../img/left-icon.png);
+      top: 0;
+    }
+  }
+
+  .button-right {
+    position: relative;
+    padding-left: 8px;
+
+    &:before {
+      content: url(../img/right-icon.png);
+      top: 0;
+    }
+  }
+
+  .button-favorit {
+    position: relative;
+    padding-left: 22px;
+
+    &:before {
+      content: url(../img/not-favorit-icon.png);
+      top: 0;
+    }
+  }
+
+  .button-close {
+    position: relative;
+    padding-left: 22px;
+
+    &:before {
+      content: url(../img/close-icon.png);
+      top: 0;
+    }
+  }
+}
+//========================
+
+.spinner-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.spinner-overlay.visible {
+  display: block;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color:rgb(103, 58, 183);;
+  height: 100%;
+  width: 20px;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+}
+//===========================
