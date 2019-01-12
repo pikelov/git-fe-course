@@ -31,10 +31,10 @@
 
   &__logo {
     display: flex;
-    max-width: 302px;
-    margin-left: 37%;
+    // max-width: 302px;
+    // margin-left: 37%;
     justify-content: center;
-    content: url(../img/logo.png); //+++++++!!!!!++++++++
+    // content: url(../img/logo.png); //+++++++!!!!!++++++++
     
   }
 }
@@ -73,6 +73,7 @@
     font-family: $button-font;
     font-weight: bold;
     border: none;
+    box-shadow: 7px 8px 20px -5px rgba(0, 0, 0, 0.5);
 
     &-small {
       min-width: 8.1rem;
