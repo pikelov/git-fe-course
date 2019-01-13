@@ -3,7 +3,7 @@ import * as storage from '../services/storage';
 import gridItemTpl from '../templates/grid-item.hbs';
 import favoritesImgTpl from '../templates/favorites-img.hbs';
 import '../scss/styles.scss';
-ccjcjc
+
 const main = document.querySelector('.main');
 const grid = document.querySelector('.js-main-wrapper');
 const form = document.querySelector('.form');
@@ -25,19 +25,31 @@ grid.addEventListener('click', onImgClick);
 form.addEventListener('submit', handleFormSubmit);
 loadMoreBtn.addEventListener('click', handleLoadMoreClick);
 
-//New lines
 nextImg.addEventListener('click', showNextImg);
 prewImg.addEventListener('click', showPrew);
 closeBtn.addEventListener('click', closeModal);
 favorit.addEventListener('click', addToFavorit);
 
-// ============= Helpers
+// Helpers
 
+/**
+ *
+ *
+ * @param {*} photos array of objects with img data
+ * @param {*} cb hbs tamplate callback function
+ */
 function hydratePhotosGrid(photos, cb) {
   const markup = createGridItems(photos, cb);
   updatePhotosGrid(markup);
 }
 
+/**
+ *
+ *
+ * @param {*} items array of objects with img data
+ * @param {*} cb hbs tamplate callback function
+ * @returns markup ready to render
+ */
 function createGridItems(items, cb) {
   return items.reduce((markup, item) => markup + cb(item), '');
 }
