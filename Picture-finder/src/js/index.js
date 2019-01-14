@@ -51,6 +51,7 @@ function createPhotosGrid(photos, cb) {
   const markup = createGridItems(photos, cb);
   updatePhotosGrid(markup);
 }
+
 function isAdded(id) {
   if (storage.get() !== null) {
     return storage.get().find(elem => elem.id == id);
@@ -226,12 +227,14 @@ function onFavGalleryClick(e) {
 //functions for modal window 
 
 function closeModal(e) {  
+  
   e.stopPropagation();
   if (
     e.target.classList.contains("button-close") ||
     e.target.classList.contains("modal")
   ) {
     modal.style.display = "none";
+    resetFavIcon();
   } else {
     return;
   }
