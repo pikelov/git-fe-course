@@ -1,11 +1,12 @@
 .main {
   max-width: 88rem;
   margin: 0 auto;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
+    // justify-content: space-between;
   }
 }
 
@@ -66,6 +67,7 @@
     padding-left: 13px;
     box-sizing: border-box;
     margin-top: 15px;
+    z-index: 99999;
   }
 
   .button-left {
