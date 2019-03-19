@@ -1,0 +1,39 @@
+
+
+//======
+
+{
+  "genre": 1,
+  "author": "Chinua Achebe",
+  "country": "Nigeria",
+  "title": "Things Fall Apart",
+  "year": 1958
+},
+{
+  "genre": 2,
+  "author": "Hans Christian Andersen",
+  "country": "Denmark",
+  "title": "Fairy tales",
+  "year": 1836
+},
+{
+  "genre": "classic",
+  "author": "Dante Alighieri",
+  "country": "Italy",
+  "title": "The Divine Comedy",
+  "year": 1315
+},
+{
+  "genre": 1,
+  "author": "Unknown",
+  "country": "Sumer and Akkadian Empire",
+  "title": "The Epic Of Gilgamesh",
+  "year": -1700
+},
+{
+  "genre": 2,
+  "author": "Unknown",
+  "country": "India/Iran/Iraq/Egypt/Tajikistan",
+  "title": "One Thousand and One Nights",
+  "year": 1200
+}
