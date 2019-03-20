@@ -1,66 +1,92 @@
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.header {
-  max-width: 120rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1.3rem;
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
-.header__logo {
-  display: inline-block;
-}
-
-.header__logo >img {
-  width: 200px;
-  padding: 5px;
-}
-
-.button__link {
-  font-size: 1.1rem;
-  /* font-family: $link-font; */
-  /* color: ; */
-  line-height: 1.688;
-  text-decoration: none;
-  background: #585353;
-  border-radius: 25px;
-  position: relative;
-  outline: none;
-  margin-left: 2rem;
-  color: rgb(247, 207, 207);
-}
-
-.crud__buttons {
-  display: inline-block;
+.wrapper {
+  max-width: 1200px;
   margin: auto;
+  padding: 20px;
 }
 
-.js-form-section {
-  min-height: 200px;
+/* header */
+.header {
+  padding: 12px;
+  margin-bottom: 24px;
+  text-align: justify;
+  font-size: 0;
+  background-color: #2196f3;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
 }
-table, th, td {
+
+.header::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+}
+
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  text-decoration: none;
+  background-image: url('https://cdn.worldvectorlogo.com/logos/react-native-firebase-1.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu button {
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  margin-right: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #424242;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:last-child {
+  margin-right: 0;
+}
+
+.menu button:hover {
+  border-color: #f5d108;
+}
+table,
+th,
+td {
   border: 1px solid black;
 }
 
+table {
+  background: #2196f3;
+}
+
 .form {
-  position: relative;
-  
-	width: 300px;
-	padding: 6px ;
-	margin: 20px auto ;
-	background: rgb(0, 0, 0);
-  border: 1px solid #CAD8DE;
-	border-radius: 4px;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  width: 300px;
+  padding: 6px;
+  margin: 20px auto;
+  background: #2196f3;
+  border: 1px solid #cad8de;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
   font-family: roboto, sans-serif;
   font-size: 11px;
-	color: rgb(247, 207, 207);
 }
 
 .form > h3 {
@@ -72,28 +98,27 @@ table, th, td {
   display: block;
 }
 
-
 .input-form {
   min-width: 280px;
-  height: 50px;;
+  height: 50px;
 }
 
 .button-js {
-	float: right;
-	padding: 6px 20px;
-	height: 30px;
+  float: right;
+  padding: 6px 20px;
+  height: 30px;
   border-radius: 15px;
-	color: rgb(247, 207, 207);
+  color: rgb(247, 207, 207);
   font: bold 13px Arial, Tahoma, sans-serif;
-	background-color: #585353;
-	cursor: pointer;
-	text-shadow: 0 -1px rgba(0,0,0,0.15);
-	outline: none;
+  background-color: #585353;
+  cursor: pointer;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.15);
+  outline: none;
 }
 
 .close-btn {
   display: inline-block;
-  margin-left: 55%;
+  margin-left: 59.5%;
   background-color: #585353;
 }
 
@@ -101,7 +126,6 @@ table, th, td {
   content: url(../img/close-icon.png);
   top: 0;
 }
-
 
 .form-header {
   display: inline-block;

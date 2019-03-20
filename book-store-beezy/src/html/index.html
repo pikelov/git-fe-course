@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="../css/styles.css"> -->
-  <title>Awesome Bookstore</title>
-</head>
-<body>
-  <header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+    <title>Awesome Bookstore</title>
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"></a>
+      <nav class="menu crud__buttons crud-js">
+        <button class="button__link js-button-addB">Add book</button>
+        <button class="button__link js-button-removeB">Remove book</button>
+        <button class="button__link js-button-editB">Edit book</button>
+        <button class="button__link js-button-viewB">Book list</button>
+        <button class="button__link js-button-addG">Add genre</button>
+        <button class="button__link js-button-removeG">Delete genre</button>
+        <button class="button__link js-button-editG">Edit genre</button>
+        <button class="button__link js-button-viewG">Genre list</button>
+      </nav>
+    </header>
 
-      <div class="header__logo">
-          <img src="../src/images/pexels-photo-1166657.jpeg" alt="logo" />
-          <div class="crud__buttons crud-js">
-              <button class="button__link js-button-addB">Add book</button>
-              <button class="button__link js-button-removeB">Remove book</button>
-              <button class="button__link js-button-editB">Edit book</button>
-              <button class="button__link js-button-viewB">Book list</button>
-              <button class="button__link js-button-addG">Add genre</button>
-              <button class="button__link js-button-removeG">Delete genre</button>
-              <button class="button__link js-button-editG">Edit genre</button>
-              <button class="button__link js-button-viewG">Genre list</button>
-             </div>
-        </div>
-       
-  </header>
+    <section class="form__section js-form-section"></section>
 
-  <section class="form__section js-form-section">
-  </section>
+    <div class="rendered__list js-list"></div>
 
-  <div class="rendered__list js-list"></div>
-
-<!-- <script src="../js/index.js"></script> -->
-</body>
+    <!-- <script src="../js/index.js"></script> -->
+  </body>
 </html>
