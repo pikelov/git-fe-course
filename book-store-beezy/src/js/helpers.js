@@ -1,5 +1,6 @@
 //HELPERS
 import * as api from './api';
+import * as form from './view';
 
 // resetForm - help to avoid more than 1 form at the same time on the section
 /**
@@ -171,4 +172,110 @@ export function onGenreEditConfirmClick() {
 
   api.editGenre(genreEditedData)
   resetForm('.js-form-section');
+}
+
+
+// Event listeners helpers
+
+//==Main menu Event listener function
+
+export function onMenuButtonClick(e) {
+  e.preventDefault();
+  const nodeName = e.target.nodeName;
+
+  if (nodeName !== 'BUTTON') return;
+
+  caseSwitcherHeaderSection(e);
+}
+
+//Section form eventListener 
+export function onSectionButtonClick(e) {
+
+  e.preventDefault();
+  if(e.target.nodeName !== 'BUTTON') return;
+
+  caseSwitcherFormSection(e);
+}
+
+function caseSwitcherHeaderSection(event) {
+  const targetClass = event.target.classList;
+
+  switch(true){
+    case targetClass.contains('js-button-addB'):
+    form.createAddForm('Add');
+      break;
+
+    case targetClass.contains('js-button-removeB'):
+      form.createSearchForm('Remove book', 'id', 'remove', 'number');
+      break;
+    
+    case targetClass.contains('js-button-editB'): 
+      form.createSearchForm('Edit book', 'title', 'search', 'text');
+      break;
+
+    case targetClass.contains('js-button-viewB'):
+      api.getBooksList();
+      break;
+
+    case targetClass.contains('js-button-addG'):
+      form.createSearchForm('Add genre', 'genre', 'add', 'text');  
+      break;
+
+    case targetClass.contains('js-button-removeG'):
+      form.createSearchForm('Remove genre', 'id', 'delete', 'number');  
+      break;
+    
+    case targetClass.contains('js-button-editG'):
+      form.createSearchForm('Edit genre', 'genre', 'search', 'text');  
+      break;
+
+    case targetClass.contains('js-button-viewG'):
+      api.getGenresList(); 
+      break; 
+  } 
+
+}
+
+
+function caseSwitcherFormSection(event) {
+  const targetClass = event.target.classList;
+
+  switch(true){
+    case targetClass.contains('js-button-title-search'):
+      onSearchClick();
+      break;
+
+    case targetClass.contains('js-button-confirm-add'):
+      onConfirmAddClick();
+      break;
+    
+    case targetClass.contains('js-edit-confirm-button'):
+      onEditConfirm();
+      break;
+
+    case targetClass.contains('close-btn'):
+      onCloseBtnClick();
+      break;
+
+    case targetClass.contains('js-button-id-remove'):
+      onRemoveClick();  
+      break;
+
+    case targetClass.contains('js-button-genre-add'):
+      onGenreAddClick();  
+      break;
+    
+    case targetClass.contains('js-button-id-delete'):
+      onGenreRemoveClick();
+      break;
+
+    case targetClass.contains('js-button-genre-search'):
+      helpers.onGenreEditClick();
+      break; 
+
+    case targetClass.contains('js-editG-confirm-button'):
+      helpers.onGenreEditConfirmClick();
+      break; 
+
+  }  
 }

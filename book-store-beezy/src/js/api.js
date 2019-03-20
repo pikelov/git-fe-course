@@ -1,15 +1,17 @@
 import * as form from './view'
+
 //CRUD FUNCTIONES
 
 // This server-emulator doesn't have backend for fetcing data by title, it has id fetching only.
-// Thats why I used GET method and after (in getBookBySelector();) use array-fn.method 
+// Thats why I use GET method and after (in getBookBySelector();) use array-fn.method 
 // .filter, to get requested data.
 
 //Add book (create)
 /**
- * @param {fn accept object with fields: genreId, author, price, title} bookObj
+ * fn accept object with fields: genreId, author, price, title
+ * @param {object} bookObj
  */
-export function addBook(bookObj) {
+export const addBook = bookObj =>
   fetch('https://my-json-server.typicode.com/pikelov/fake-server/books', {
     method: 'POST',
     body: JSON.stringify(bookObj),
@@ -24,10 +26,8 @@ export function addBook(bookObj) {
     .then(data => console.log(data))
     .catch(error => console.log('ERROR' + error));
 
-}
-
 //Edit book (update)
-export function editBook(bookObj) {
+export const editBook = bookObj =>
   fetch(`https://my-json-server.typicode.com/pikelov/fake-server/books/${bookObj.id}`, {
     method: 'PUT',
     body: JSON.stringify(bookObj),
@@ -41,8 +41,6 @@ export function editBook(bookObj) {
     return response.json()
   })
   .catch(error => console.log('ERROR' + error));
-
-}
 
 
 //get books array
