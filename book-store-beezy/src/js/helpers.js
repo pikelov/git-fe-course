@@ -188,7 +188,7 @@ export function onMenuButtonClick(e) {
   caseSwitcherHeaderSection(e);
 }
 
-//Section form eventListener 
+//Section form eventListener functions
 export function onSectionButtonClick(e) {
 
   e.preventDefault();

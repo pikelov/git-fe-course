@@ -1,6 +1,5 @@
 'use strict';
 
-import * as api from './js/api';
 import * as helpers from './js/helpers';
 import './css/styles.css';
 

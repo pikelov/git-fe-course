@@ -121,10 +121,11 @@ table {
 }
 
 .close-btn:before {
-  content: url(../img/close-icon.png);
+  content: url(e10cbce9ea12b74eda8e9c9a3fa751fd.png);
   top: 0;
 }
 
 .form-header {
   display: inline-block;
 }
+

@@ -70,7 +70,7 @@ export const getBookBySelector = title =>
     })
     .catch(err => console.log('ERROR:' + err));
 
-// replace deleted genre id to 0 on server
+// replace deleted genre id to 0 on the server side
     export const replaceDeletedGenre = deletedGenreId =>
     fetch(`https://my-json-server.typicode.com/pikelov/fake-server/books`)
       .then(response => {
