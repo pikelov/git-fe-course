@@ -1,0 +1,323 @@
+// 20190508112335
+// http://fs0.moviestape.net/pl.php?pl=Game.of.Thrones
+
+{
+  "playlist": [
+    {
+      "comment": "Сезон 1",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s01/Game.of.Thrones.S01E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 2",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s02/Game.of.Thrones.S02E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 3",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s03/Game.of.Thrones.S03E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 4",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s04/Game.of.Thrones.S04E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 5",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s05/Game.of.Thrones.S05E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 6",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E07.mp4"
+        },
+        {
+          "comment": "08. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E08.mp4"
+        },
+        {
+          "comment": "09. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E09.mp4"
+        },
+        {
+          "comment": "10. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s06/Game.of.Thrones.S06E10.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 7",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E02.mp4"
+        },
+        {
+          "comment": "03. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E03.mp4"
+        },
+        {
+          "comment": "04. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E04.mp4"
+        },
+        {
+          "comment": "05. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E05.mp4"
+        },
+        {
+          "comment": "06. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E06.mp4"
+        },
+        {
+          "comment": "07. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s07/Game.of.Thrones.S07E07.mp4"
+        }
+      ]
+    },
+    {
+      "comment": "Сезон 8",
+      "playlist": [
+        {
+          "comment": "01. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s08/Game.of.Thrones.S08E01.mp4"
+        },
+        {
+          "comment": "02. серія",
+          "file": "http://fs0.moviestape.net/video/86e2798f4d57afc7129c91a0482eb137/serials/Game.of.Thrones/s08/Game.of.Thrones.S08E02.mp4"
+        }
+      ]
+    }
+  ]
+}
